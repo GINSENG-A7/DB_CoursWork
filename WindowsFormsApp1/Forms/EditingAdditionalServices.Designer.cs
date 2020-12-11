@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class AddingNewBooking
+    partial class EditingAdditionalServices
     {
         /// <summary>
         /// Required designer variable.
@@ -129,8 +129,9 @@ namespace WindowsFormsApp1
             this.updateDataButton.Name = "updateDataButton";
             this.updateDataButton.Size = new System.Drawing.Size(119, 23);
             this.updateDataButton.TabIndex = 10;
-            this.updateDataButton.Text = "Внести изменения";
+            this.updateDataButton.Text = "Обновить";
             this.updateDataButton.UseVisualStyleBackColor = true;
+            this.updateDataButton.Click += new System.EventHandler(this.updateDataButton_Click);
             // 
             // refreshButton
             // 
@@ -140,8 +141,9 @@ namespace WindowsFormsApp1
             this.refreshButton.TabIndex = 11;
             this.refreshButton.Text = "Внести изменения";
             this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
-            // AddingNewBooking
+            // EditingAdditionalServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,7 +160,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AddingNewBooking";
+            this.Name = "EditingAdditionalServices";
             this.Text = "EditingAdditionalServices";
             this.ResumeLayout(false);
             this.PerformLayout();

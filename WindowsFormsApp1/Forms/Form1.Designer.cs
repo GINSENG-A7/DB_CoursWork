@@ -98,6 +98,7 @@ namespace WindowsFormsApp1
             this.newNumber = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.checkAddititonalServicesButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -416,6 +417,7 @@ namespace WindowsFormsApp1
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.checkAddititonalServicesButton);
             this.tabPage2.Controls.Add(this.livingEvictionDateTimePicker);
             this.tabPage2.Controls.Add(this.livingSettlingDateTimePicker);
             this.tabPage2.Controls.Add(this.button6);
@@ -782,6 +784,16 @@ namespace WindowsFormsApp1
             this.dataGridView4.Size = new System.Drawing.Size(722, 377);
             this.dataGridView4.TabIndex = 2;
             // 
+            // checkAddititonalServicesButton
+            // 
+            this.checkAddititonalServicesButton.Location = new System.Drawing.Point(734, 186);
+            this.checkAddititonalServicesButton.Name = "checkAddititonalServicesButton";
+            this.checkAddititonalServicesButton.Size = new System.Drawing.Size(279, 37);
+            this.checkAddititonalServicesButton.TabIndex = 36;
+            this.checkAddititonalServicesButton.Text = "Просмотреть информацию о дополнительных услугах";
+            this.checkAddititonalServicesButton.UseVisualStyleBackColor = true;
+            this.checkAddititonalServicesButton.Click += new System.EventHandler(this.checkAddititonalServicesButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -877,6 +889,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox newDiscountTextBox;
         private System.Windows.Forms.Button changeDiscountButton;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button checkAddititonalServicesButton;
     }
 }
 

@@ -112,7 +112,7 @@ namespace WindowsFormsApp1
         public static DataTable SelectAllFromLiving(SqlConnection connection)
         {
             DataTable dt = new DataTable();
-            SqlCommand command = new SqlCommand("SELECT c.passport_series, c.passport_number, c.name, c.surname, c.patronymic, l.settling, l.eviction, l.number, l.value_of_guests, l.value_of_kids FROM Customer c, Living l WHERE c.customer_id = l.customer_id", connection);
+            SqlCommand command = new SqlCommand("SELECT c.passport_series, c.passport_number, c.name, c.surname, c.patronymic, l.settling, l.eviction, l.number, l.value_of_guests, l.value_of_kids, l.as_id FROM Customer c, Living l WHERE c.customer_id = l.customer_id", connection);
             SqlDataReader reader = command.ExecuteReader();
             dt.Load(reader);
             reader.Close();
@@ -209,6 +209,30 @@ namespace WindowsFormsApp1
                 SqlCommand command2 = new SqlCommand($"UPDATE Discount SET discount = {disc}", connection);
                 command2.ExecuteNonQuery();
             }
+        }
+        public static int[] SelectAllFromAdditionalServicesWhereIsSetLivingID(SqlConnection connection, int iOL)
+        {
+            int[] v = new int[5];
+            DataTable dt = new DataTable();
+            SqlCommand command = new SqlCommand($"SELECT mini_bar, clothes_washing, telephone, intercity_telephone, food FROM Additional_services WHERE as_id = {iOL}", connection);
+            command.CommandType = CommandType.Text;
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                for(int i = 0; i <= v.Length; i++)
+                {
+                    if(reader.GetValue(i) == null)
+                    {
+                        v[i] = 0;
+                    }
+                    else
+                    {
+                        v[i] = Convert.ToInt32(reader.GetValue(i));
+                    }
+                }
+            }
+            reader.Close();
+            return v;
         }
     }
 }

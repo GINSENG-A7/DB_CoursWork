@@ -11,25 +11,38 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
-    public partial class AddingNewBooking : Form
+    public partial class EditingAdditionalServices : Form
     {
         public static DataTable dtLinked = new DataTable();
-        public AddingNewBooking()
+        public EditingAdditionalServices()
         {
             InitializeComponent();
         }
 
-        private void CheckAndAddBookingData_Click(object sender, EventArgs e)
+        private void updateDataButton_Click(object sender, EventArgs e)
         {
-            Form1.OpenConnectionCorrect(Form1.conn);
-            SqlCommand command = new SqlCommand("INSERT INTO Booking (settling, eviction, number, value_of_guests, value_of_kids) VALUES (@settling, @eviction, @number, @value_of_guests, @value_of_kids)", Form1.conn);
-            command.Parameters.AddWithValue("@settling", textBox10.Text);
-            command.Parameters.AddWithValue("@eviction", textBox11.Text);
-            command.Parameters.AddWithValue("@value_of_guests", textBox12.Text);
-            command.Parameters.AddWithValue("@value_of_kids", textBox13.Text);
-            command.Parameters.AddWithValue("@number", Convert.ToInt32(textBox14.Text));
-
-            command.ExecuteNonQuery();
+            minibarTextBox.Text = Form1.valuesOfAdditionalServicesCell[0].ToString();
+            clothesWashingTextBox.Text = Form1.valuesOfAdditionalServicesCell[1].ToString();
+            telephoneTextBox.Text = Form1.valuesOfAdditionalServicesCell[2].ToString();
+            intercityTelephoneTextBox.Text = Form1.valuesOfAdditionalServicesCell[3].ToString();
+            eatTextBox.Text = Form1.valuesOfAdditionalServicesCell[4].ToString();
+        }
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            var dResult = MessageBox.Show("Вы уверены, что хотите применить изменения в базе данных?", "", MessageBoxButtons.YesNo);
+            if (dResult == DialogResult.Yes)
+            {
+                if (Convert.ToInt32(minibarTextBox.Text) <=0 && Convert.ToInt32(clothesWashingTextBox.Text) <=0 && Convert.ToInt32(telephoneTextBox.Text) <=0 && Convert.ToInt32(intercityTelephoneTextBox.Text) <=0 && Convert.ToInt32(eatTextBox.Text) <=0)
+                {
+                    SqlCommand command = new SqlCommand();
+                    command = new SqlCommand($"UPDATE Customer SET passport_series = {0}, passport_number = {0}, name = '{0}', surname = '{0}', patronymic = '{0}', birthday = '{0}', tel_number = '{0}' WHERE customer_id = {0}", Form1.conn);
+                    command.ExecuteNonQuery();
+                }
+                else
+                {
+                    MessageBox.Show("Введены отрицательные значения");
+                }
+            }
         }
     }
 }

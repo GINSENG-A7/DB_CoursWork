@@ -13,8 +13,10 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        public static int[] valuesOfAdditionalServicesCell = new int[5];
         public static int idOfChosenRow1 = -1;
         public static int idOfChosenRow2 = -1;
+        public static int idOfChosenRowAS = -1;
         public static int numberOfChosenRow = -1;
         public static int discount = 0;
         public static string[] admissibleTypesOfApartments = new string[] {"Люкс", "Полулюкс", "Одноместный", "Двуместный", "Трёхместный", "Четырёхместный", "Пятиместный", "Шестиместный"};
@@ -69,6 +71,7 @@ namespace WindowsFormsApp1
             dataGridView2.DataSource = RequestsSQLT.SelectAllFromLiving(conn);
             ElementsSettings.SetDefaultSettingsToDGV(dataGridView2);
             ElementsSettings.HideFirstXColumns(dataGridView2, 2);
+            ElementsSettings.HideLastXColumns(dataGridView2, 1);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -99,13 +102,7 @@ namespace WindowsFormsApp1
 
         private void addBookingButton_Click(object sender, EventArgs e)
         {
-            AddingNewBooking anb = new AddingNewBooking();
-            anb.ShowDialog();
-            anb.Focus();
-            if (anb.DialogResult == DialogResult.OK)
-            {
-                dataGridView1.DataSource = AddingNewCustomer.dtLinked;
-            }
+
         }
 
         private void newNumber_Click(object sender, EventArgs e)
@@ -143,6 +140,7 @@ namespace WindowsFormsApp1
             textBox15.Text = s[4];
             textBox12.Text = s[5];
             textBox11.Text = s[6];
+            idOfChosenRowAS = Convert.ToInt32(s[7]);
         }
         private void searchTextBox_Enter(object sender, EventArgs e)
         {
@@ -282,6 +280,14 @@ namespace WindowsFormsApp1
             newDiscountTextBox.Clear();
             discount = RequestsSQLT.GetCurrentDiscount(conn);
             label19.Text = discount.ToString() + " %";
+        }
+
+        private void checkAddititonalServicesButton_Click(object sender, EventArgs e)
+        {
+            valuesOfAdditionalServicesCell = RequestsSQLT.SelectAllFromAdditionalServicesWhereIsSetLivingID(conn, idOfChosenRowAS);
+            AddingNewCustomer eas = new AddingNewCustomer();
+            eas.ShowDialog();
+            eas.Focus();
         }
     }
 }

@@ -41,6 +41,8 @@ namespace WindowsFormsApp1
         {
             SqlCommand command1 = new SqlCommand();
             SqlCommand command2 = new SqlCommand();
+            SqlCommand command3 = new SqlCommand();
+            int idOfNewAdditionalService = -1;
             Form1.OpenConnectionCorrect(Form1.conn);
             int idOfCurrentCustomer = 0;
             if (ElementsSettings.RowOfPassportSeriesConsistEnoughNumbers(textBox1) == true && ElementsSettings.RowOfPassportNumberConsistEnoughNumbers(textBox2) == true && ElementsSettings.ValuesOfGuestsAndKidsAreCorrect(textBox13, textBox14) == true && ElementsSettings.SettlingDateIsLessThenEvictionDate(ancSettlingDateTimePicker, ancEvictionDateTimePicker) == true) //Проверяем все ограничения ввода
@@ -51,13 +53,19 @@ namespace WindowsFormsApp1
                     idOfCurrentCustomer = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(Form1.conn, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)));
                     if(RequestsSQLT.ValueOfCustomerLivingsAndBookingsForToday(Form1.conn, idOfCurrentCustomer) < 5)
                     {
-                        command2 = new SqlCommand("INSERT INTO Living (number, settling, eviction, value_of_guests, value_of_kids, customer_id) VALUES (@number, @settling, @eviction, @value_of_guests, @value_of_kids, @customer_id)", Form1.conn);
+                        command3 = new SqlCommand("INSERT INTO Additional_services (mini_bar, clothes_washing, telephone, intercity_telephone, food) VALUES (0, 0, 0, 0, 0)", Form1.conn);
+                        command3.ExecuteNonQuery();
+                        command3 = new SqlCommand("select @@IDENTITY", Form1.conn);
+                        idOfNewAdditionalService = Convert.ToInt32(command3.ExecuteScalar());
+
+                        command2 = new SqlCommand("INSERT INTO Living (number, settling, eviction, value_of_guests, value_of_kids, customer_id, as_id) VALUES (@number, @settling, @eviction, @value_of_guests, @value_of_kids, @customer_id, @as_id)", Form1.conn);
                         command2.Parameters.AddWithValue("@number", selectedNumberOfApartments);
                         command2.Parameters.AddWithValue("@settling", ancSettlingDateTimePicker.Value);
                         command2.Parameters.AddWithValue("@eviction", ancEvictionDateTimePicker.Value);
                         command2.Parameters.AddWithValue("@value_of_guests", textBox13.Text);
                         command2.Parameters.AddWithValue("@value_of_kids", textBox14.Text);
                         command2.Parameters.AddWithValue("@customer_id", idOfCurrentCustomer);
+                        command2.Parameters.AddWithValue("@as_id", idOfNewAdditionalService);
                         command2.ExecuteNonQuery();
                         //Тут можно потом поставить MessageBox, предупреждающий о том, что ткоей клинет уже есть в базе данных
                         //Tyт потом дописать каскадное создание записи в Additional_services!!!!
