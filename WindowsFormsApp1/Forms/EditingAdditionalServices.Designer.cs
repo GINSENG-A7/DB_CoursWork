@@ -94,6 +94,7 @@ namespace WindowsFormsApp1
             this.minibarTextBox.Name = "minibarTextBox";
             this.minibarTextBox.Size = new System.Drawing.Size(100, 20);
             this.minibarTextBox.TabIndex = 5;
+            this.minibarTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.minibarTextBox_KeyPress);
             // 
             // clothesWashingTextBox
             // 
@@ -101,6 +102,7 @@ namespace WindowsFormsApp1
             this.clothesWashingTextBox.Name = "clothesWashingTextBox";
             this.clothesWashingTextBox.Size = new System.Drawing.Size(100, 20);
             this.clothesWashingTextBox.TabIndex = 6;
+            this.clothesWashingTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clothesWashingTextBox_KeyPress);
             // 
             // telephoneTextBox
             // 
@@ -108,6 +110,7 @@ namespace WindowsFormsApp1
             this.telephoneTextBox.Name = "telephoneTextBox";
             this.telephoneTextBox.Size = new System.Drawing.Size(100, 20);
             this.telephoneTextBox.TabIndex = 7;
+            this.telephoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telephoneTextBox_KeyPress);
             // 
             // intercityTelephoneTextBox
             // 
@@ -115,6 +118,7 @@ namespace WindowsFormsApp1
             this.intercityTelephoneTextBox.Name = "intercityTelephoneTextBox";
             this.intercityTelephoneTextBox.Size = new System.Drawing.Size(100, 20);
             this.intercityTelephoneTextBox.TabIndex = 8;
+            this.intercityTelephoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.intercityTelephoneTextBox_KeyPress);
             // 
             // eatTextBox
             // 
@@ -122,6 +126,7 @@ namespace WindowsFormsApp1
             this.eatTextBox.Name = "eatTextBox";
             this.eatTextBox.Size = new System.Drawing.Size(100, 20);
             this.eatTextBox.TabIndex = 9;
+            this.eatTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.eatTextBox_KeyPress);
             // 
             // updateDataButton
             // 

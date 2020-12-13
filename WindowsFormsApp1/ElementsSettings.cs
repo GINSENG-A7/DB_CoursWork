@@ -324,7 +324,7 @@ namespace WindowsFormsApp1
         }
         public static string[] SetDataFromLivingOrBookingDGVToTextBoxes(DataGridView dgv, DataGridViewCellEventArgs e_local)
         {
-            string[] collomnsValues = new string[8];
+            string[] collomnsValues = new string[9];
             if (e_local.ColumnIndex == 0)
             {
                 collomnsValues[0] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex].FormattedValue.ToString();
@@ -335,6 +335,7 @@ namespace WindowsFormsApp1
                 collomnsValues[5] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 8].FormattedValue.ToString();
                 collomnsValues[6] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 9].FormattedValue.ToString();
                 collomnsValues[7] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 10].FormattedValue.ToString();
+                collomnsValues[8] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 11].FormattedValue.ToString();
             }
             if (e_local.ColumnIndex == 1)
             {
@@ -346,6 +347,7 @@ namespace WindowsFormsApp1
                 collomnsValues[5] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 7].FormattedValue.ToString();
                 collomnsValues[6] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 8].FormattedValue.ToString();
                 collomnsValues[7] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 9].FormattedValue.ToString();
+                collomnsValues[8] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 10].FormattedValue.ToString();
             }
             if (e_local.ColumnIndex == 2)
             {
@@ -357,6 +359,7 @@ namespace WindowsFormsApp1
                 collomnsValues[5] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 6].FormattedValue.ToString();
                 collomnsValues[6] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 7].FormattedValue.ToString();
                 collomnsValues[7] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 8].FormattedValue.ToString();
+                collomnsValues[8] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 9].FormattedValue.ToString();
             }
             if (e_local.ColumnIndex == 3)
             {
@@ -368,6 +371,7 @@ namespace WindowsFormsApp1
                 collomnsValues[5] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 5].FormattedValue.ToString();
                 collomnsValues[6] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 6].FormattedValue.ToString();
                 collomnsValues[7] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 7].FormattedValue.ToString();
+                collomnsValues[8] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 8].FormattedValue.ToString();
             }
             if (e_local.ColumnIndex == 4)
             {
@@ -379,6 +383,7 @@ namespace WindowsFormsApp1
                 collomnsValues[5] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 4].FormattedValue.ToString();
                 collomnsValues[6] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 5].FormattedValue.ToString();
                 collomnsValues[7] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 6].FormattedValue.ToString();
+                collomnsValues[8] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 7].FormattedValue.ToString();
             }
             if (e_local.ColumnIndex == 5)
             {
@@ -390,6 +395,7 @@ namespace WindowsFormsApp1
                 collomnsValues[5] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 3].FormattedValue.ToString();
                 collomnsValues[6] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 4].FormattedValue.ToString();
                 collomnsValues[7] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 5].FormattedValue.ToString();
+                collomnsValues[8] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 6].FormattedValue.ToString();
             }
             if (e_local.ColumnIndex == 6)
             {
@@ -401,6 +407,7 @@ namespace WindowsFormsApp1
                 collomnsValues[5] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 2].FormattedValue.ToString();
                 collomnsValues[6] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 3].FormattedValue.ToString();
                 collomnsValues[7] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 4].FormattedValue.ToString();
+                collomnsValues[8] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 5].FormattedValue.ToString();
             }
             if (e_local.ColumnIndex == 7)
             {
@@ -412,6 +419,7 @@ namespace WindowsFormsApp1
                 collomnsValues[5] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 1].FormattedValue.ToString();
                 collomnsValues[6] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 2].FormattedValue.ToString();
                 collomnsValues[7] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 3].FormattedValue.ToString();
+                collomnsValues[8] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 4].FormattedValue.ToString();
             }
             if (e_local.ColumnIndex == 8)
             {
@@ -423,6 +431,7 @@ namespace WindowsFormsApp1
                 collomnsValues[5] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex].FormattedValue.ToString();
                 collomnsValues[6] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 1].FormattedValue.ToString();
                 collomnsValues[7] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 2].FormattedValue.ToString();
+                collomnsValues[8] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 3].FormattedValue.ToString();
             }
             if (e_local.ColumnIndex == 9)
             {
@@ -434,6 +443,7 @@ namespace WindowsFormsApp1
                 collomnsValues[5] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex - 1].FormattedValue.ToString();
                 collomnsValues[6] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex].FormattedValue.ToString();
                 collomnsValues[7] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 1].FormattedValue.ToString();
+                collomnsValues[8] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 2].FormattedValue.ToString();
             }
             return collomnsValues;
         }

@@ -17,6 +17,8 @@ namespace WindowsFormsApp1
         public static int idOfChosenRow1 = -1;
         public static int idOfChosenRow2 = -1;
         public static int idOfChosenRowAS = -1;
+        public static int idOfChosenRowLiving = -1;
+        public static int idOfChosenRowBooking = -1;
         public static int numberOfChosenRow = -1;
         public static int discount = 0;
         public static string[] admissibleTypesOfApartments = new string[] {"Люкс", "Полулюкс", "Одноместный", "Двуместный", "Трёхместный", "Четырёхместный", "Пятиместный", "Шестиместный"};
@@ -71,7 +73,7 @@ namespace WindowsFormsApp1
             dataGridView2.DataSource = RequestsSQLT.SelectAllFromLiving(conn);
             ElementsSettings.SetDefaultSettingsToDGV(dataGridView2);
             ElementsSettings.HideFirstXColumns(dataGridView2, 2);
-            ElementsSettings.HideLastXColumns(dataGridView2, 1);
+            ElementsSettings.HideLastXColumns(dataGridView2, 2);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -134,13 +136,20 @@ namespace WindowsFormsApp1
         {
             string[] s = ElementsSettings.SetDataFromLivingOrBookingDGVToTextBoxes(dataGridView2, e);
             idOfChosenRow2 = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(conn, Convert.ToInt32(s[0]), Convert.ToInt32(s[1])));
-            textBox9.Text = s[0] + "  " + s[1] + "  " + s[2] + "  " + s[3] + "  " + s[4];
+            textBox9.Text = s[0] + "  " + s[1] + "  " + s[2] + "  " + s[3] + "  " + s[4] + " " + s[5] + " " + s[6] + " " + s[7] + " " + s[8];
             livingSettlingDateTimePicker.Value = Convert.ToDateTime(s[2]);
             livingEvictionDateTimePicker.Value = Convert.ToDateTime(s[3]);
             textBox15.Text = s[4];
             textBox12.Text = s[5];
             textBox11.Text = s[6];
-            idOfChosenRowAS = Convert.ToInt32(s[7]);
+            if (s[7] != "")
+            {
+                idOfChosenRowAS = Convert.ToInt32(s[7]);
+            }
+            if (s[8] != "")
+            {
+                idOfChosenRowLiving = Convert.ToInt32(s[8]);
+            }
         }
         private void searchTextBox_Enter(object sender, EventArgs e)
         {
@@ -249,6 +258,9 @@ namespace WindowsFormsApp1
         private void moveToLivingsButton_Click(object sender, EventArgs e)
         {
             dataGridView2.DataSource = RequestsSQLT.SelectAllFromLivingByCustomerId(conn, idOfChosenRow1);
+            ElementsSettings.SetDefaultSettingsToDGV(dataGridView2);
+            ElementsSettings.HideFirstXColumns(dataGridView2, 2);
+            ElementsSettings.HideLastXColumns(dataGridView2, 2);
             tabControl1.SelectedIndex = 1;
         }
         private void moveToBookingsBotton_Click(object sender, EventArgs e)
@@ -285,9 +297,47 @@ namespace WindowsFormsApp1
         private void checkAddititonalServicesButton_Click(object sender, EventArgs e)
         {
             valuesOfAdditionalServicesCell = RequestsSQLT.SelectAllFromAdditionalServicesWhereIsSetLivingID(conn, idOfChosenRowAS);
-            AddingNewCustomer eas = new AddingNewCustomer();
+            EditingAdditionalServices eas = new EditingAdditionalServices();
             eas.ShowDialog();
             eas.Focus();
+        }
+
+        private void changeLivingDataButton_Click(object sender, EventArgs e)
+        {
+            var dResult = MessageBox.Show("Вы уверены, что хотите применить изменения в базе данных?", "", MessageBoxButtons.YesNo);
+            if (dResult == DialogResult.Yes)
+            {
+                if (RequestsSQLT.SelectSetValueOfNumberFromApartments(textBox15, conn) == true && ElementsSettings.SettlingDateIsLessThenEvictionDate(livingSettlingDateTimePicker, livingEvictionDateTimePicker) == true) //Проверяем все ограничения ввода для таблицы клиетов
+                {
+                    SqlCommand command = new SqlCommand();
+                    command = new SqlCommand($"UPDATE Living SET settling = '{Convert.ToDateTime(livingSettlingDateTimePicker.Value)}', eviction = '{Convert.ToDateTime(livingEvictionDateTimePicker.Value)}', number = {Convert.ToInt32(textBox15.Text)}, value_of_guests = {Convert.ToInt32(textBox12.Text)}, value_of_kids = {Convert.ToInt32(textBox11.Text)} WHERE customer_id = {idOfChosenRowLiving}", conn);
+                    command.ExecuteNonQuery();
+                }
+                else
+                {
+                    MessageBox.Show("Введены недопустимые значения");
+                }
+            }
+        }
+
+        private void deleteLivingDataButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox15_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ElementsSettings.RowWithNoLetters(textBox15, e);
+        }
+
+        private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ElementsSettings.RowWithNoLetters(textBox12, e);
+        }
+
+        private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ElementsSettings.RowWithNoLetters(textBox11, e);
         }
     }
 }

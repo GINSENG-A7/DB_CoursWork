@@ -112,7 +112,7 @@ namespace WindowsFormsApp1
         public static DataTable SelectAllFromLiving(SqlConnection connection)
         {
             DataTable dt = new DataTable();
-            SqlCommand command = new SqlCommand("SELECT c.passport_series, c.passport_number, c.name, c.surname, c.patronymic, l.settling, l.eviction, l.number, l.value_of_guests, l.value_of_kids, l.as_id FROM Customer c, Living l WHERE c.customer_id = l.customer_id", connection);
+            SqlCommand command = new SqlCommand("SELECT c.passport_series, c.passport_number, c.name, c.surname, c.patronymic, l.settling, l.eviction, l.number, l.value_of_guests, l.value_of_kids, l.as_id, l.living_id FROM Customer c, Living l WHERE c.customer_id = l.customer_id", connection);
             SqlDataReader reader = command.ExecuteReader();
             dt.Load(reader);
             reader.Close();
@@ -121,7 +121,7 @@ namespace WindowsFormsApp1
         public static DataTable SelectAllFromLivingByCustomerId(SqlConnection connection, int iOC)
         {
             DataTable dt = new DataTable();
-            SqlCommand command = new SqlCommand($"SELECT settling, eviction, number, value_of_guests, value_of_kids FROM Living WHERE customer_id = {iOC}", connection);
+            SqlCommand command = new SqlCommand($"SELECT c.passport_series, c.passport_number, c.name, c.surname, c.patronymic, l.settling, l.eviction, l.number, l.value_of_guests, l.value_of_kids, l.as_id, l.living_id FROM Customer c, Living l WHERE l.customer_id = {iOC} AND c.customer_id = {iOC}", connection);
             SqlDataReader reader = command.ExecuteReader();
             dt.Load(reader);
             reader.Close();
@@ -219,15 +219,18 @@ namespace WindowsFormsApp1
             SqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows)
             {
-                for(int i = 0; i <= v.Length; i++)
+                if (reader.Read())
                 {
-                    if(reader.GetValue(i) == null)
+                    for (int i = 0; i < v.Length; i++)
                     {
-                        v[i] = 0;
-                    }
-                    else
-                    {
-                        v[i] = Convert.ToInt32(reader.GetValue(i));
+                        if (reader.GetValue(i) == null)
+                        {
+                            v[i] = 0;
+                        }
+                        else
+                        {
+                            v[i] = Convert.ToInt32(reader.GetValue(i));
+                        }
                     }
                 }
             }

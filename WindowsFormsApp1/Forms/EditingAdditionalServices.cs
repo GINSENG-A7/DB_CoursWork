@@ -17,6 +17,11 @@ namespace WindowsFormsApp1
         public EditingAdditionalServices()
         {
             InitializeComponent();
+            minibarTextBox.Text = Form1.valuesOfAdditionalServicesCell[0].ToString();
+            clothesWashingTextBox.Text = Form1.valuesOfAdditionalServicesCell[1].ToString();
+            telephoneTextBox.Text = Form1.valuesOfAdditionalServicesCell[2].ToString();
+            intercityTelephoneTextBox.Text = Form1.valuesOfAdditionalServicesCell[3].ToString();
+            eatTextBox.Text = Form1.valuesOfAdditionalServicesCell[4].ToString();
         }
 
         private void updateDataButton_Click(object sender, EventArgs e)
@@ -27,15 +32,15 @@ namespace WindowsFormsApp1
             intercityTelephoneTextBox.Text = Form1.valuesOfAdditionalServicesCell[3].ToString();
             eatTextBox.Text = Form1.valuesOfAdditionalServicesCell[4].ToString();
         }
-        private void refreshButton_Click(object sender, EventArgs e)
+        private void refreshButton_Click(object sender, EventArgs e) //Изменение данных
         {
             var dResult = MessageBox.Show("Вы уверены, что хотите применить изменения в базе данных?", "", MessageBoxButtons.YesNo);
             if (dResult == DialogResult.Yes)
             {
-                if (Convert.ToInt32(minibarTextBox.Text) <=0 && Convert.ToInt32(clothesWashingTextBox.Text) <=0 && Convert.ToInt32(telephoneTextBox.Text) <=0 && Convert.ToInt32(intercityTelephoneTextBox.Text) <=0 && Convert.ToInt32(eatTextBox.Text) <=0)
+                if (Convert.ToInt32(minibarTextBox.Text) >=0 && Convert.ToInt32(clothesWashingTextBox.Text) >=0 && Convert.ToInt32(telephoneTextBox.Text) >=0 && Convert.ToInt32(intercityTelephoneTextBox.Text) >=0 && Convert.ToInt32(eatTextBox.Text) >=0)
                 {
                     SqlCommand command = new SqlCommand();
-                    command = new SqlCommand($"UPDATE Customer SET passport_series = {0}, passport_number = {0}, name = '{0}', surname = '{0}', patronymic = '{0}', birthday = '{0}', tel_number = '{0}' WHERE customer_id = {0}", Form1.conn);
+                    command = new SqlCommand($"UPDATE Additional_services SET mini_bar = {Convert.ToInt32(minibarTextBox.Text)}, clothes_washing = {Convert.ToInt32(clothesWashingTextBox.Text)}, telephone = {Convert.ToInt32(telephoneTextBox.Text)}, intercity_telephone = {Convert.ToInt32(intercityTelephoneTextBox.Text)}, food = {Convert.ToInt32(eatTextBox.Text)} WHERE as_id = {Form1.idOfChosenRowAS}", Form1.conn);
                     command.ExecuteNonQuery();
                 }
                 else
@@ -43,6 +48,31 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Введены отрицательные значения");
                 }
             }
+        }
+
+        private void minibarTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ElementsSettings.RowWithNoLetters(minibarTextBox, e);
+        }
+
+        private void clothesWashingTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ElementsSettings.RowWithNoLetters(clothesWashingTextBox, e);
+        }
+
+        private void telephoneTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ElementsSettings.RowWithNoLetters(telephoneTextBox, e);
+        }
+
+        private void intercityTelephoneTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ElementsSettings.RowWithNoLetters(intercityTelephoneTextBox, e);
+        }
+
+        private void eatTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ElementsSettings.RowWithNoLetters(eatTextBox, e);
         }
     }
 }

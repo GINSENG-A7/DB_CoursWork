@@ -60,10 +60,11 @@ namespace WindowsFormsApp1
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkAddititonalServicesButton = new System.Windows.Forms.Button();
             this.livingEvictionDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.livingSettlingDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.changeLivingDataButton = new System.Windows.Forms.Button();
+            this.deleteLivingDataButton = new System.Windows.Forms.Button();
             this.moveToCustomerFromLivingButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -98,7 +99,6 @@ namespace WindowsFormsApp1
             this.newNumber = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.checkAddititonalServicesButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -420,8 +420,8 @@ namespace WindowsFormsApp1
             this.tabPage2.Controls.Add(this.checkAddititonalServicesButton);
             this.tabPage2.Controls.Add(this.livingEvictionDateTimePicker);
             this.tabPage2.Controls.Add(this.livingSettlingDateTimePicker);
-            this.tabPage2.Controls.Add(this.button6);
-            this.tabPage2.Controls.Add(this.button5);
+            this.tabPage2.Controls.Add(this.changeLivingDataButton);
+            this.tabPage2.Controls.Add(this.deleteLivingDataButton);
             this.tabPage2.Controls.Add(this.moveToCustomerFromLivingButton);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
@@ -442,6 +442,16 @@ namespace WindowsFormsApp1
             this.tabPage2.Text = "Работа с проживаниями";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // checkAddititonalServicesButton
+            // 
+            this.checkAddititonalServicesButton.Location = new System.Drawing.Point(734, 186);
+            this.checkAddititonalServicesButton.Name = "checkAddititonalServicesButton";
+            this.checkAddititonalServicesButton.Size = new System.Drawing.Size(279, 37);
+            this.checkAddititonalServicesButton.TabIndex = 36;
+            this.checkAddititonalServicesButton.Text = "Просмотреть информацию о дополнительных услугах";
+            this.checkAddititonalServicesButton.UseVisualStyleBackColor = true;
+            this.checkAddititonalServicesButton.Click += new System.EventHandler(this.checkAddititonalServicesButton_Click);
+            // 
             // livingEvictionDateTimePicker
             // 
             this.livingEvictionDateTimePicker.Location = new System.Drawing.Point(844, 99);
@@ -456,23 +466,25 @@ namespace WindowsFormsApp1
             this.livingSettlingDateTimePicker.Size = new System.Drawing.Size(169, 20);
             this.livingSettlingDateTimePicker.TabIndex = 34;
             // 
-            // button6
+            // changeLivingDataButton
             // 
-            this.button6.Location = new System.Drawing.Point(234, 389);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(242, 23);
-            this.button6.TabIndex = 33;
-            this.button6.Text = "Изменить данные выбранного проживания";
-            this.button6.UseVisualStyleBackColor = true;
+            this.changeLivingDataButton.Location = new System.Drawing.Point(234, 389);
+            this.changeLivingDataButton.Name = "changeLivingDataButton";
+            this.changeLivingDataButton.Size = new System.Drawing.Size(242, 23);
+            this.changeLivingDataButton.TabIndex = 33;
+            this.changeLivingDataButton.Text = "Изменить данные выбранного проживания";
+            this.changeLivingDataButton.UseVisualStyleBackColor = true;
+            this.changeLivingDataButton.Click += new System.EventHandler(this.changeLivingDataButton_Click);
             // 
-            // button5
+            // deleteLivingDataButton
             // 
-            this.button5.Location = new System.Drawing.Point(3, 389);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(225, 23);
-            this.button5.TabIndex = 32;
-            this.button5.Text = "Удалить выбранное проживание";
-            this.button5.UseVisualStyleBackColor = true;
+            this.deleteLivingDataButton.Location = new System.Drawing.Point(3, 389);
+            this.deleteLivingDataButton.Name = "deleteLivingDataButton";
+            this.deleteLivingDataButton.Size = new System.Drawing.Size(225, 23);
+            this.deleteLivingDataButton.TabIndex = 32;
+            this.deleteLivingDataButton.Text = "Удалить выбранное проживание";
+            this.deleteLivingDataButton.UseVisualStyleBackColor = true;
+            this.deleteLivingDataButton.Click += new System.EventHandler(this.deleteLivingDataButton_Click);
             // 
             // moveToCustomerFromLivingButton
             // 
@@ -535,6 +547,7 @@ namespace WindowsFormsApp1
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(169, 20);
             this.textBox11.TabIndex = 23;
+            this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_KeyPress);
             // 
             // textBox12
             // 
@@ -542,6 +555,7 @@ namespace WindowsFormsApp1
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(169, 20);
             this.textBox12.TabIndex = 22;
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
             // 
             // textBox15
             // 
@@ -549,6 +563,7 @@ namespace WindowsFormsApp1
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(169, 20);
             this.textBox15.TabIndex = 19;
+            this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox15_KeyPress);
             // 
             // textBox9
             // 
@@ -784,16 +799,6 @@ namespace WindowsFormsApp1
             this.dataGridView4.Size = new System.Drawing.Size(722, 377);
             this.dataGridView4.TabIndex = 2;
             // 
-            // checkAddititonalServicesButton
-            // 
-            this.checkAddititonalServicesButton.Location = new System.Drawing.Point(734, 186);
-            this.checkAddititonalServicesButton.Name = "checkAddititonalServicesButton";
-            this.checkAddititonalServicesButton.Size = new System.Drawing.Size(279, 37);
-            this.checkAddititonalServicesButton.TabIndex = 36;
-            this.checkAddititonalServicesButton.Text = "Просмотреть информацию о дополнительных услугах";
-            this.checkAddititonalServicesButton.UseVisualStyleBackColor = true;
-            this.checkAddititonalServicesButton.Click += new System.EventHandler(this.checkAddititonalServicesButton_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -861,8 +866,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Button moveToCustomerFromLivingButton;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button changeLivingDataButton;
+        private System.Windows.Forms.Button deleteLivingDataButton;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
