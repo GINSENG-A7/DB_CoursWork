@@ -35,6 +35,14 @@ namespace WindowsFormsApp1
                 typeOfApartmentsComboBox.Items.Add(RequestsSQLT.comboElements[i]);
             }
             discountTextBox.Text = Form1.discount.ToString();
+            if(Form1.cb == true)
+            {
+                ancSettlingDateTimePicker.Value = Convert.ToDateTime(Form1.bookingS[2]);
+                ancEvictionDateTimePicker.Value = Convert.ToDateTime(Form1.bookingS[3]);
+                textBox13.Text = Form1.bookingS[5];
+                textBox14.Text = Form1.bookingS[6];
+                dataGridViewANC.DataSource = RequestsSQLT.SelectAllFromApartmentsWhereNumberIsSet(Form1.conn, Convert.ToInt32(Form1.bookingS[4]));
+            }
         }
 
         public void CheckAndAddCustomerData_Click(object sender, EventArgs e) //Регистрация проживания

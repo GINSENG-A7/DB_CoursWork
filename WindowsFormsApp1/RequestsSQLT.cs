@@ -130,7 +130,7 @@ namespace WindowsFormsApp1
         public static DataTable SelectAllFromBooking(SqlConnection connection)
         {
             DataTable dt = new DataTable();
-            SqlCommand command = new SqlCommand("SELECT c.name, c.surname, c.patronymic, b.settling, b.eviction, b.number, b.value_of_guests, b.value_of_kids FROM Customer c, Booking b WHERE c.customer_id = b.customer_id", connection);
+            SqlCommand command = new SqlCommand("SELECT c.passport_series, c.passport_number, c.name, c.surname, c.patronymic, b.settling, b.eviction, b.number, b.value_of_guests, b.value_of_kids, b.booking_id, b.booking_id FROM Customer c, Booking b WHERE c.customer_id = b.customer_id", connection);
             SqlDataReader reader = command.ExecuteReader();
             dt.Load(reader);
             reader.Close();
@@ -139,7 +139,7 @@ namespace WindowsFormsApp1
         public static DataTable SelectAllFromBookingByCustomerId(SqlConnection connection, int iOC)
         {
             DataTable dt = new DataTable();
-            SqlCommand command = new SqlCommand($"SELECT settling, eviction, number, value_of_guests, value_of_kids FROM Booking WHERE customer_id = {iOC}", connection);
+            SqlCommand command = new SqlCommand($"SELECT c.passport_series, c.passport_number, c.name, c.surname, c.patronymic, b.settling, b.eviction, b.number, b.value_of_guests, b.value_of_kids, b.booking_id, b.booking_id FROM Customer c, Booking b WHERE b.customer_id = {iOC} AND c.customer_id = {iOC}", connection);
             SqlDataReader reader = command.ExecuteReader();
             dt.Load(reader);
             reader.Close();
@@ -149,6 +149,15 @@ namespace WindowsFormsApp1
         {
             DataTable dt = new DataTable();
             SqlCommand command = new SqlCommand("SELECT number, type, price FROM Apartments", connection);
+            SqlDataReader reader = command.ExecuteReader();
+            dt.Load(reader);
+            reader.Close();
+            return dt;
+        }
+        public static DataTable SelectAllFromApartmentsWhereNumberIsSet(SqlConnection connection, int n)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand command = new SqlCommand($"SELECT number, type, price FROM Apartments WHERE number = {n}", connection);
             SqlDataReader reader = command.ExecuteReader();
             dt.Load(reader);
             reader.Close();
@@ -236,6 +245,21 @@ namespace WindowsFormsApp1
             }
             reader.Close();
             return v;
+        }
+        public static bool DoesCustomerHasNoLivivngsAndBookings(SqlConnection connection, int iOC)
+        {
+            SqlCommand command1 = new SqlCommand($"SELECT living_id FROM Living WHERE customer_id = {iOC}", connection);
+            command1.CommandType = CommandType.Text;
+            SqlCommand command2 = new SqlCommand($"SELECT booking_id FROM Booking WHERE customer_id = {iOC}", connection);
+            command2.CommandType = CommandType.Text;
+            if (command1.ExecuteScalar() == null && command2.ExecuteScalar() == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

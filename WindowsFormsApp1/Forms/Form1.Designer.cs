@@ -61,37 +61,24 @@ namespace WindowsFormsApp1
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkAddititonalServicesButton = new System.Windows.Forms.Button();
-            this.livingEvictionDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.livingSettlingDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.changeLivingDataButton = new System.Windows.Forms.Button();
             this.deleteLivingDataButton = new System.Windows.Forms.Button();
             this.moveToCustomerFromLivingButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.bookingEvictionDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.bookingSettlingDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.changeBookingDataButton = new System.Windows.Forms.Button();
+            this.deleteBookingDataButton = new System.Windows.Forms.Button();
+            this.moveToCustomerFromBookingButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -99,6 +86,9 @@ namespace WindowsFormsApp1
             this.newNumber = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -418,19 +408,13 @@ namespace WindowsFormsApp1
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.checkAddititonalServicesButton);
-            this.tabPage2.Controls.Add(this.livingEvictionDateTimePicker);
-            this.tabPage2.Controls.Add(this.livingSettlingDateTimePicker);
             this.tabPage2.Controls.Add(this.changeLivingDataButton);
             this.tabPage2.Controls.Add(this.deleteLivingDataButton);
             this.tabPage2.Controls.Add(this.moveToCustomerFromLivingButton);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.textBox11);
             this.tabPage2.Controls.Add(this.textBox12);
-            this.tabPage2.Controls.Add(this.textBox15);
             this.tabPage2.Controls.Add(this.textBox9);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.dataGridView2);
@@ -444,27 +428,13 @@ namespace WindowsFormsApp1
             // 
             // checkAddititonalServicesButton
             // 
-            this.checkAddititonalServicesButton.Location = new System.Drawing.Point(734, 186);
+            this.checkAddititonalServicesButton.Location = new System.Drawing.Point(734, 96);
             this.checkAddititonalServicesButton.Name = "checkAddititonalServicesButton";
             this.checkAddititonalServicesButton.Size = new System.Drawing.Size(279, 37);
             this.checkAddititonalServicesButton.TabIndex = 36;
             this.checkAddititonalServicesButton.Text = "Просмотреть информацию о дополнительных услугах";
             this.checkAddititonalServicesButton.UseVisualStyleBackColor = true;
             this.checkAddititonalServicesButton.Click += new System.EventHandler(this.checkAddititonalServicesButton_Click);
-            // 
-            // livingEvictionDateTimePicker
-            // 
-            this.livingEvictionDateTimePicker.Location = new System.Drawing.Point(844, 99);
-            this.livingEvictionDateTimePicker.Name = "livingEvictionDateTimePicker";
-            this.livingEvictionDateTimePicker.Size = new System.Drawing.Size(169, 20);
-            this.livingEvictionDateTimePicker.TabIndex = 35;
-            // 
-            // livingSettlingDateTimePicker
-            // 
-            this.livingSettlingDateTimePicker.Location = new System.Drawing.Point(844, 69);
-            this.livingSettlingDateTimePicker.Name = "livingSettlingDateTimePicker";
-            this.livingSettlingDateTimePicker.Size = new System.Drawing.Size(169, 20);
-            this.livingSettlingDateTimePicker.TabIndex = 34;
             // 
             // changeLivingDataButton
             // 
@@ -499,7 +469,7 @@ namespace WindowsFormsApp1
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(735, 162);
+            this.label9.Location = new System.Drawing.Point(735, 72);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 13);
             this.label9.TabIndex = 29;
@@ -508,42 +478,15 @@ namespace WindowsFormsApp1
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(735, 132);
+            this.label10.Location = new System.Drawing.Point(735, 42);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 13);
             this.label10.TabIndex = 28;
             this.label10.Text = "Количество гостей";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(735, 102);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 13);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Дата выезда";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(735, 72);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 13);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "Дата заезда";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(735, 42);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "Номер";
-            // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(844, 159);
+            this.textBox11.Location = new System.Drawing.Point(844, 69);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(169, 20);
             this.textBox11.TabIndex = 23;
@@ -551,19 +494,11 @@ namespace WindowsFormsApp1
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(844, 129);
+            this.textBox12.Location = new System.Drawing.Point(844, 39);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(169, 20);
             this.textBox12.TabIndex = 22;
             this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(844, 39);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(169, 20);
-            this.textBox15.TabIndex = 19;
-            this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox15_KeyPress);
             // 
             // textBox9
             // 
@@ -594,20 +529,16 @@ namespace WindowsFormsApp1
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.bookingEvictionDateTimePicker);
-            this.tabPage3.Controls.Add(this.bookingSettlingDateTimePicker);
-            this.tabPage3.Controls.Add(this.button3);
-            this.tabPage3.Controls.Add(this.button7);
-            this.tabPage3.Controls.Add(this.button8);
-            this.tabPage3.Controls.Add(this.textBox10);
+            this.tabPage3.Controls.Add(this.checkBox1);
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.changeBookingDataButton);
+            this.tabPage3.Controls.Add(this.deleteBookingDataButton);
+            this.tabPage3.Controls.Add(this.moveToCustomerFromBookingButton);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label14);
-            this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Controls.Add(this.textBox16);
             this.tabPage3.Controls.Add(this.textBox17);
-            this.tabPage3.Controls.Add(this.textBox20);
             this.tabPage3.Controls.Add(this.textBox21);
             this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.dataGridView3);
@@ -619,58 +550,40 @@ namespace WindowsFormsApp1
             this.tabPage3.Text = "Работа с бронированием";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // bookingEvictionDateTimePicker
+            // changeBookingDataButton
             // 
-            this.bookingEvictionDateTimePicker.Location = new System.Drawing.Point(845, 97);
-            this.bookingEvictionDateTimePicker.Name = "bookingEvictionDateTimePicker";
-            this.bookingEvictionDateTimePicker.Size = new System.Drawing.Size(169, 20);
-            this.bookingEvictionDateTimePicker.TabIndex = 52;
+            this.changeBookingDataButton.Location = new System.Drawing.Point(235, 387);
+            this.changeBookingDataButton.Name = "changeBookingDataButton";
+            this.changeBookingDataButton.Size = new System.Drawing.Size(270, 23);
+            this.changeBookingDataButton.TabIndex = 50;
+            this.changeBookingDataButton.Text = "Изменить данные о выбранном бронировании";
+            this.changeBookingDataButton.UseVisualStyleBackColor = true;
+            this.changeBookingDataButton.Click += new System.EventHandler(this.changeBookingDataButton_Click);
             // 
-            // bookingSettlingDateTimePicker
+            // deleteBookingDataButton
             // 
-            this.bookingSettlingDateTimePicker.Location = new System.Drawing.Point(845, 67);
-            this.bookingSettlingDateTimePicker.Name = "bookingSettlingDateTimePicker";
-            this.bookingSettlingDateTimePicker.Size = new System.Drawing.Size(169, 20);
-            this.bookingSettlingDateTimePicker.TabIndex = 51;
+            this.deleteBookingDataButton.Location = new System.Drawing.Point(4, 387);
+            this.deleteBookingDataButton.Name = "deleteBookingDataButton";
+            this.deleteBookingDataButton.Size = new System.Drawing.Size(225, 23);
+            this.deleteBookingDataButton.TabIndex = 49;
+            this.deleteBookingDataButton.Text = "Удалить выбранную бронь";
+            this.deleteBookingDataButton.UseVisualStyleBackColor = true;
+            this.deleteBookingDataButton.Click += new System.EventHandler(this.deleteBookingDataButton_Click);
             // 
-            // button3
+            // moveToCustomerFromBookingButton
             // 
-            this.button3.Location = new System.Drawing.Point(235, 387);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(225, 23);
-            this.button3.TabIndex = 50;
-            this.button3.Text = "Изменить данные о выбранном бронировании";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(4, 387);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(225, 23);
-            this.button7.TabIndex = 49;
-            this.button7.Text = "Удалить выбранную бронь";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(735, 388);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(279, 23);
-            this.button8.TabIndex = 48;
-            this.button8.Text = "Перейти к клиенту";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(735, 183);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(279, 20);
-            this.textBox10.TabIndex = 47;
+            this.moveToCustomerFromBookingButton.Location = new System.Drawing.Point(734, 388);
+            this.moveToCustomerFromBookingButton.Name = "moveToCustomerFromBookingButton";
+            this.moveToCustomerFromBookingButton.Size = new System.Drawing.Size(279, 23);
+            this.moveToCustomerFromBookingButton.TabIndex = 48;
+            this.moveToCustomerFromBookingButton.Text = "Перейти к клиенту";
+            this.moveToCustomerFromBookingButton.UseVisualStyleBackColor = true;
+            this.moveToCustomerFromBookingButton.Click += new System.EventHandler(this.moveToCustomerFromBookingButton_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(736, 160);
+            this.label8.Location = new System.Drawing.Point(736, 70);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 13);
             this.label8.TabIndex = 46;
@@ -679,59 +592,25 @@ namespace WindowsFormsApp1
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(736, 130);
+            this.label14.Location = new System.Drawing.Point(736, 40);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(103, 13);
             this.label14.TabIndex = 45;
             this.label14.Text = "Количество гостей";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(736, 100);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(74, 13);
-            this.label15.TabIndex = 44;
-            this.label15.Text = "Дата выезда";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(736, 70);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 13);
-            this.label16.TabIndex = 43;
-            this.label16.Text = "Дата заезда";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(736, 40);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 13);
-            this.label17.TabIndex = 42;
-            this.label17.Text = "Номер";
-            // 
             // textBox16
             // 
-            this.textBox16.Location = new System.Drawing.Point(845, 157);
+            this.textBox16.Location = new System.Drawing.Point(845, 67);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(169, 20);
             this.textBox16.TabIndex = 41;
             // 
             // textBox17
             // 
-            this.textBox17.Location = new System.Drawing.Point(845, 127);
+            this.textBox17.Location = new System.Drawing.Point(845, 37);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(169, 20);
             this.textBox17.TabIndex = 40;
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(845, 37);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(169, 20);
-            this.textBox20.TabIndex = 37;
             // 
             // textBox21
             // 
@@ -749,6 +628,7 @@ namespace WindowsFormsApp1
             this.button9.TabIndex = 35;
             this.button9.Text = "Вывести информацию о бронях";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // dataGridView3
             // 
@@ -757,6 +637,7 @@ namespace WindowsFormsApp1
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(722, 344);
             this.dataGridView3.TabIndex = 34;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
             // tabPage4
             // 
@@ -798,6 +679,33 @@ namespace WindowsFormsApp1
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(722, 377);
             this.dataGridView4.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(736, 99);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(234, 13);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Вставить данные выбранного бронирования";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(736, 112);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(153, 13);
+            this.label12.TabIndex = 53;
+            this.label12.Text = "при следующей регистрации";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(987, 107);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 54;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -859,35 +767,22 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Button moveToCustomerFromLivingButton;
         private System.Windows.Forms.Button changeLivingDataButton;
         private System.Windows.Forms.Button deleteLivingDataButton;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button changeBookingDataButton;
+        private System.Windows.Forms.Button deleteBookingDataButton;
+        private System.Windows.Forms.Button moveToCustomerFromBookingButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.Button button9;
         public System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker livingEvictionDateTimePicker;
-        private System.Windows.Forms.DateTimePicker livingSettlingDateTimePicker;
-        private System.Windows.Forms.DateTimePicker bookingSettlingDateTimePicker;
-        private System.Windows.Forms.DateTimePicker bookingEvictionDateTimePicker;
         private System.Windows.Forms.Button newNumber;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
@@ -895,6 +790,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button changeDiscountButton;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button checkAddititonalServicesButton;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
