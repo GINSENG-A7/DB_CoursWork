@@ -72,6 +72,9 @@ namespace WindowsFormsApp1
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.changeBookingDataButton = new System.Windows.Forms.Button();
             this.deleteBookingDataButton = new System.Windows.Forms.Button();
             this.moveToCustomerFromBookingButton = new System.Windows.Forms.Button();
@@ -86,9 +89,16 @@ namespace WindowsFormsApp1
             this.newNumber = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.numberTextBox = new System.Windows.Forms.TextBox();
+            this.priceTextBox = new System.Windows.Forms.TextBox();
+            this.deleteApartmentsButton = new System.Windows.Forms.Button();
+            this.changeApartmentsButton = new System.Windows.Forms.Button();
+            this.typeComboBox = new System.Windows.Forms.ComboBox();
+            this.editImagesOfApartmentButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -550,6 +560,33 @@ namespace WindowsFormsApp1
             this.tabPage3.Text = "Работа с бронированием";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(987, 107);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 54;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(736, 112);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(153, 13);
+            this.label12.TabIndex = 53;
+            this.label12.Text = "при следующей регистрации";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(736, 99);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(234, 13);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Вставить данные выбранного бронирования";
+            // 
             // changeBookingDataButton
             // 
             this.changeBookingDataButton.Location = new System.Drawing.Point(235, 387);
@@ -641,6 +678,16 @@ namespace WindowsFormsApp1
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.editImagesOfApartmentButton);
+            this.tabPage4.Controls.Add(this.typeComboBox);
+            this.tabPage4.Controls.Add(this.changeApartmentsButton);
+            this.tabPage4.Controls.Add(this.deleteApartmentsButton);
+            this.tabPage4.Controls.Add(this.priceTextBox);
+            this.tabPage4.Controls.Add(this.numberTextBox);
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.textBox7);
             this.tabPage4.Controls.Add(this.newNumber);
             this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.dataGridView4);
@@ -664,7 +711,7 @@ namespace WindowsFormsApp1
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(737, 3);
+            this.button4.Location = new System.Drawing.Point(737, 6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(279, 24);
             this.button4.TabIndex = 3;
@@ -675,37 +722,98 @@ namespace WindowsFormsApp1
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 39);
+            this.dataGridView4.Location = new System.Drawing.Point(5, 36);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(722, 377);
+            this.dataGridView4.Size = new System.Drawing.Size(722, 349);
             this.dataGridView4.TabIndex = 2;
+            this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
             // 
-            // label11
+            // textBox7
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(736, 99);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(234, 13);
-            this.label11.TabIndex = 52;
-            this.label11.Text = "Вставить данные выбранного бронирования";
+            this.textBox7.Location = new System.Drawing.Point(5, 6);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(722, 24);
+            this.textBox7.TabIndex = 37;
             // 
-            // label12
+            // label13
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(736, 112);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(153, 13);
-            this.label12.TabIndex = 53;
-            this.label12.Text = "при следующей регистрации";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(734, 39);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(125, 13);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Числовое обозначение";
             // 
-            // checkBox1
+            // label15
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(987, 107);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 54;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(734, 65);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 13);
+            this.label15.TabIndex = 39;
+            this.label15.Text = "Тип номера";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(734, 92);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 13);
+            this.label16.TabIndex = 40;
+            this.label16.Text = "Цена за человека";
+            // 
+            // numberTextBox
+            // 
+            this.numberTextBox.Location = new System.Drawing.Point(865, 36);
+            this.numberTextBox.Name = "numberTextBox";
+            this.numberTextBox.Size = new System.Drawing.Size(148, 20);
+            this.numberTextBox.TabIndex = 41;
+            // 
+            // priceTextBox
+            // 
+            this.priceTextBox.Location = new System.Drawing.Point(865, 89);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(148, 20);
+            this.priceTextBox.TabIndex = 43;
+            // 
+            // deleteApartmentsButton
+            // 
+            this.deleteApartmentsButton.Location = new System.Drawing.Point(5, 390);
+            this.deleteApartmentsButton.Name = "deleteApartmentsButton";
+            this.deleteApartmentsButton.Size = new System.Drawing.Size(181, 23);
+            this.deleteApartmentsButton.TabIndex = 44;
+            this.deleteApartmentsButton.Text = "Удалить выбранный номер";
+            this.deleteApartmentsButton.UseVisualStyleBackColor = true;
+            this.deleteApartmentsButton.Click += new System.EventHandler(this.deleteApartmentsButton_Click);
+            // 
+            // changeApartmentsButton
+            // 
+            this.changeApartmentsButton.Location = new System.Drawing.Point(192, 390);
+            this.changeApartmentsButton.Name = "changeApartmentsButton";
+            this.changeApartmentsButton.Size = new System.Drawing.Size(226, 23);
+            this.changeApartmentsButton.TabIndex = 45;
+            this.changeApartmentsButton.Text = "Изменить данные о выбранном номере";
+            this.changeApartmentsButton.UseVisualStyleBackColor = true;
+            this.changeApartmentsButton.Click += new System.EventHandler(this.changeApartmentsButton_Click);
+            // 
+            // typeComboBox
+            // 
+            this.typeComboBox.FormattingEnabled = true;
+            this.typeComboBox.Location = new System.Drawing.Point(865, 62);
+            this.typeComboBox.Name = "typeComboBox";
+            this.typeComboBox.Size = new System.Drawing.Size(148, 21);
+            this.typeComboBox.TabIndex = 46;
+            // 
+            // editImagesOfApartmentButton
+            // 
+            this.editImagesOfApartmentButton.Location = new System.Drawing.Point(424, 390);
+            this.editImagesOfApartmentButton.Name = "editImagesOfApartmentButton";
+            this.editImagesOfApartmentButton.Size = new System.Drawing.Size(303, 23);
+            this.editImagesOfApartmentButton.TabIndex = 47;
+            this.editImagesOfApartmentButton.Text = "Редактировать фото выбранного номера";
+            this.editImagesOfApartmentButton.UseVisualStyleBackColor = true;
+            this.editImagesOfApartmentButton.Click += new System.EventHandler(this.editImagesOfApartmentButton_Click);
             // 
             // Form1
             // 
@@ -726,6 +834,7 @@ namespace WindowsFormsApp1
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
@@ -793,6 +902,16 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox priceTextBox;
+        private System.Windows.Forms.TextBox numberTextBox;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button changeApartmentsButton;
+        private System.Windows.Forms.Button deleteApartmentsButton;
+        private System.Windows.Forms.ComboBox typeComboBox;
+        private System.Windows.Forms.Button editImagesOfApartmentButton;
     }
 }
 

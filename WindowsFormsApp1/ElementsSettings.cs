@@ -496,5 +496,28 @@ namespace WindowsFormsApp1
                 return false;
             }
         }
+        public static string[] SetDataFromApartmentsDGVToTextBoxes(DataGridView dgv, DataGridViewCellEventArgs e_local)
+        {
+            string[] collomnsValues = new string[3];
+            if (e_local.ColumnIndex == 0)
+            {
+                collomnsValues[0] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex].FormattedValue.ToString();
+                collomnsValues[1] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 1].FormattedValue.ToString();
+                collomnsValues[2] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 2].FormattedValue.ToString();
+            }
+            if (e_local.ColumnIndex == 1)
+            {
+                collomnsValues[0] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex - 1].FormattedValue.ToString();
+                collomnsValues[1] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex].FormattedValue.ToString();
+                collomnsValues[2] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex + 1].FormattedValue.ToString();
+            }
+            if (e_local.ColumnIndex == 2)
+            {
+                collomnsValues[0] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex - 2].FormattedValue.ToString();
+                collomnsValues[1] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex - 1].FormattedValue.ToString();
+                collomnsValues[2] = dgv.Rows[e_local.RowIndex].Cells[e_local.ColumnIndex].FormattedValue.ToString();
+            }
+            return collomnsValues;
+        }
     }
 }

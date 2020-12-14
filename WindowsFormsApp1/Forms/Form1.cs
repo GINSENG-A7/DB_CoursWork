@@ -62,6 +62,7 @@ namespace WindowsFormsApp1
             RequestsSQLT.GetTypesOfApartments(RequestsSQLT.comboElements, conn); // Получаем все реально имеющиеся типы номеров для данной гостинницы для последующего использоваия в ComboBox
             discount = RequestsSQLT.GetCurrentDiscount(conn);
             label19.Text = discount.ToString() + " %";
+            typeComboBox.Items.AddRange(admissibleTypesOfApartments);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -166,7 +167,15 @@ namespace WindowsFormsApp1
                 idOfChosenRowBooking = Convert.ToInt32(bookingS[8]);
             }
         }
-
+        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            bookingS = ElementsSettings.SetDataFromApartmentsDGVToTextBoxes(dataGridView4, e);
+            textBox7.Text = bookingS[0] + "  " + bookingS[1] + "  " + bookingS[2];
+            numberOfChosenRow = Convert.ToInt32(bookingS[0]);
+            numberTextBox.Text = bookingS[0];
+            typeComboBox.Text = bookingS[1];
+            priceTextBox.Text = bookingS[2];
+        }
         private void searchTextBox_Enter(object sender, EventArgs e)
         {
             ElementsSettings.DefaultTextBoxSettings(searchTextBox);
@@ -410,6 +419,50 @@ namespace WindowsFormsApp1
                     command0.ExecuteNonQuery();
                 }
             }
+        }
+
+        private void changeApartmentsButton_Click(object sender, EventArgs e)
+        {
+            var dResult = MessageBox.Show("Вы уверены, что хотите применить изменения в базе данных?", "", MessageBoxButtons.YesNo);
+            if (dResult == DialogResult.Yes)
+            {
+                if (RequestsSQLT.NumberOfApartmentsIsFree(conn, numberOfChosenRow) == true) //Проверяем все ограничения ввода для таблицы клиентов
+                {
+                    SqlCommand command = new SqlCommand();
+                    command = new SqlCommand($"UPDATE Apartments SET number = {Convert.ToInt32(numberTextBox.Text)}, \"type\" = '{typeComboBox.Text}', price = {Convert.ToInt32(priceTextBox.Text)} WHERE number = {Convert.ToInt32(numberTextBox.Text)}", conn);
+                    command.ExecuteNonQuery();
+                }
+                else
+                {
+                    MessageBox.Show("Редактирование данной записи недоступно. На номер зарегистрированно неоконченное проживание или оформлена бронь.");
+                }
+            }
+        }
+
+        private void deleteApartmentsButton_Click(object sender, EventArgs e)
+        {
+            var dResult = MessageBox.Show("Вы уверены, что хотите удалить эту запись?", "", MessageBoxButtons.YesNo);
+            if (dResult == DialogResult.Yes)
+            {
+                if (RequestsSQLT.NumberOfApartmentsIsFree(conn, numberOfChosenRow) == true) //Проверяем все ограничения ввода для таблицы клиентов
+                {
+                    SqlCommand command = new SqlCommand();
+                    command = new SqlCommand($"DELETE FROM Apartments WHERE number = {Convert.ToInt32(numberTextBox.Text)}", conn);
+                    command.ExecuteNonQuery();
+                }
+                else
+                {
+                    MessageBox.Show("Редактирование данной записи недоступно. На номер зарегистрированно неоконченное проживание или оформлена бронь.");
+                }
+            }
+        }
+
+        private void editImagesOfApartmentButton_Click(object sender, EventArgs e)
+        {
+            RequestsSQLT.CollectImagesOfNthNumber(conn, numberOfChosenRow, RequestsSQLT.photosList);
+            ViewingApartmentsPhotos vap = new ViewingApartmentsPhotos();
+            vap.ShowDialog();
+            vap.Focus();
         }
     }
 }

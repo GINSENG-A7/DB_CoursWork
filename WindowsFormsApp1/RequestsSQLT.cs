@@ -10,8 +10,14 @@ using System.Data;
 
 namespace WindowsFormsApp1
 {
+    public struct PictureData
+    {
+        public int id;
+        public string path;
+    }
     public static class RequestsSQLT
     {
+        public static List<PictureData> photosList = new List<PictureData>();
         public static List<string> comboElements = new List<string>();
         public static DataTable ApplyTargetFiltres(SqlConnection connection, string type, DateTime b1, DateTime b2, int bp, int tp)
         {
@@ -47,6 +53,22 @@ namespace WindowsFormsApp1
             }
             reader.Close();
             return cE;
+        }
+        public static List<PictureData> CollectImagesOfNthNumber(SqlConnection connection, int nOA, List<PictureData> pList)
+        {
+            pList.Clear();
+            SqlCommand command = new SqlCommand($"SELECT photos_id, path FROM Photos WHERE number = {nOA}", connection);
+            command.CommandType = CommandType.Text;
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    pList.Add(new PictureData() { id = Convert.ToInt32(reader.GetValue(0)), path = reader.GetValue(1).ToString()});
+                }
+            }
+            reader.Close();
+            return pList;
         }
 
         public static bool SelectSetValueOfNumberFromApartments(TextBox tb, SqlConnection connection)
@@ -148,7 +170,7 @@ namespace WindowsFormsApp1
         public static DataTable SelectAllFromApartments(SqlConnection connection)
         {
             DataTable dt = new DataTable();
-            SqlCommand command = new SqlCommand("SELECT number, type, price FROM Apartments", connection);
+            SqlCommand command = new SqlCommand($"SELECT number, type, price FROM Apartments", connection);
             SqlDataReader reader = command.ExecuteReader();
             dt.Load(reader);
             reader.Close();
@@ -162,6 +184,33 @@ namespace WindowsFormsApp1
             dt.Load(reader);
             reader.Close();
             return dt;
+        }
+        public static bool NumberOfApartmentsIsFree(SqlConnection connection, int nOA)
+        {
+            SqlCommand command = new SqlCommand($"SELECT a.number FROM Apartments a WHERE a.number = {nOA} AND(a.number IN(SELECT number FROM Living WHERE eviction > '{DateTime.Today}') AND NOT EXISTS(SELECT number FROM Booking WHERE a.number IN(SELECT number FROM Booking))) OR(a.number IN(SELECT number FROM Booking WHERE settling < '{DateTime.Today}') AND NOT EXISTS(SELECT number FROM Living WHERE a.number IN(SELECT number FROM Living)) OR((a.number in (SELECT number FROM Living WHERE eviction > '{DateTime.Today}')) AND(a.number in (SELECT number FROM Booking WHERE settling < '{DateTime.Today}'))))", connection);
+            command.CommandType = CommandType.Text;
+            if (command.ExecuteScalar() == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool IsNotThereSetNumberInApartments(SqlConnection connection, int nOA)
+        {
+            SqlCommand command = new SqlCommand($"SELECT DISTINCT number FROM Apartments WHERE number = {nOA}", connection);
+            command.CommandType = CommandType.Text;
+            if (command.ExecuteScalar() == null)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Введён уже существущий номер");
+                return false;
+            }
         }
         public static bool ComapreCustomerFIOforOneID(SqlConnection connection, int pSeries, int pNumber, string n, string s, string p)
         {
