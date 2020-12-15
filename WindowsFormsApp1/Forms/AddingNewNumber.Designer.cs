@@ -124,8 +124,11 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(275, 155);
+            this.MinimumSize = new System.Drawing.Size(275, 155);
             this.Name = "AddingNewNumber";
-            this.Text = "AddingNewNumber";
+            this.Text = "Добавление новых апартаментов";
             this.ResumeLayout(false);
             this.PerformLayout();
 

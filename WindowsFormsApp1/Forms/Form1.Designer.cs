@@ -121,9 +121,9 @@ namespace WindowsFormsApp1
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 39);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 36);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(722, 345);
+            this.dataGridView1.Size = new System.Drawing.Size(722, 348);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -139,9 +139,9 @@ namespace WindowsFormsApp1
             // 
             // addCustomerButton
             // 
-            this.addCustomerButton.Location = new System.Drawing.Point(734, 389);
+            this.addCustomerButton.Location = new System.Drawing.Point(734, 390);
             this.addCustomerButton.Name = "addCustomerButton";
-            this.addCustomerButton.Size = new System.Drawing.Size(279, 24);
+            this.addCustomerButton.Size = new System.Drawing.Size(279, 23);
             this.addCustomerButton.TabIndex = 3;
             this.addCustomerButton.Text = "Зарегистрировать нового клиента";
             this.addCustomerButton.UseVisualStyleBackColor = true;
@@ -194,14 +194,14 @@ namespace WindowsFormsApp1
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(834, 186);
+            this.dateTimePicker1.Location = new System.Drawing.Point(834, 166);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(179, 20);
             this.dateTimePicker1.TabIndex = 25;
             // 
             // changeCustomerDataButton
             // 
-            this.changeCustomerDataButton.Location = new System.Drawing.Point(178, 391);
+            this.changeCustomerDataButton.Location = new System.Drawing.Point(178, 390);
             this.changeCustomerDataButton.Name = "changeCustomerDataButton";
             this.changeCustomerDataButton.Size = new System.Drawing.Size(218, 23);
             this.changeCustomerDataButton.TabIndex = 24;
@@ -211,7 +211,7 @@ namespace WindowsFormsApp1
             // 
             // deleteCustomerButton
             // 
-            this.deleteCustomerButton.Location = new System.Drawing.Point(6, 391);
+            this.deleteCustomerButton.Location = new System.Drawing.Point(6, 390);
             this.deleteCustomerButton.Name = "deleteCustomerButton";
             this.deleteCustomerButton.Size = new System.Drawing.Size(166, 23);
             this.deleteCustomerButton.TabIndex = 23;
@@ -221,7 +221,7 @@ namespace WindowsFormsApp1
             // 
             // moveToBookingsBotton
             // 
-            this.moveToBookingsBotton.Location = new System.Drawing.Point(881, 360);
+            this.moveToBookingsBotton.Location = new System.Drawing.Point(881, 361);
             this.moveToBookingsBotton.Name = "moveToBookingsBotton";
             this.moveToBookingsBotton.Size = new System.Drawing.Size(132, 23);
             this.moveToBookingsBotton.TabIndex = 22;
@@ -231,7 +231,7 @@ namespace WindowsFormsApp1
             // 
             // moveToLivingsButton
             // 
-            this.moveToLivingsButton.Location = new System.Drawing.Point(734, 360);
+            this.moveToLivingsButton.Location = new System.Drawing.Point(734, 361);
             this.moveToLivingsButton.Name = "moveToLivingsButton";
             this.moveToLivingsButton.Size = new System.Drawing.Size(141, 23);
             this.moveToLivingsButton.TabIndex = 21;
@@ -241,7 +241,7 @@ namespace WindowsFormsApp1
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(738, 246);
+            this.searchTextBox.Location = new System.Drawing.Point(738, 218);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(275, 20);
             this.searchTextBox.TabIndex = 20;
@@ -252,7 +252,7 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(735, 219);
+            this.label7.Location = new System.Drawing.Point(735, 195);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 13);
             this.label7.TabIndex = 19;
@@ -261,7 +261,7 @@ namespace WindowsFormsApp1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(735, 189);
+            this.label6.Location = new System.Drawing.Point(735, 169);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 18;
@@ -270,7 +270,7 @@ namespace WindowsFormsApp1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(735, 159);
+            this.label5.Location = new System.Drawing.Point(735, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 17;
@@ -279,7 +279,7 @@ namespace WindowsFormsApp1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(735, 129);
+            this.label4.Location = new System.Drawing.Point(735, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 16;
@@ -288,7 +288,7 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(735, 99);
+            this.label3.Location = new System.Drawing.Point(735, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 15;
@@ -297,7 +297,7 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(735, 69);
+            this.label2.Location = new System.Drawing.Point(735, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 14;
@@ -314,7 +314,7 @@ namespace WindowsFormsApp1
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(834, 216);
+            this.textBox8.Location = new System.Drawing.Point(834, 192);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(179, 20);
             this.textBox8.TabIndex = 12;
@@ -323,7 +323,7 @@ namespace WindowsFormsApp1
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(834, 156);
+            this.textBox6.Location = new System.Drawing.Point(834, 140);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(179, 20);
             this.textBox6.TabIndex = 10;
@@ -332,7 +332,7 @@ namespace WindowsFormsApp1
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(834, 126);
+            this.textBox5.Location = new System.Drawing.Point(834, 114);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(179, 20);
             this.textBox5.TabIndex = 9;
@@ -341,7 +341,7 @@ namespace WindowsFormsApp1
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(834, 96);
+            this.textBox4.Location = new System.Drawing.Point(834, 88);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(179, 20);
             this.textBox4.TabIndex = 8;
@@ -350,7 +350,7 @@ namespace WindowsFormsApp1
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(834, 66);
+            this.textBox3.Location = new System.Drawing.Point(834, 62);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(179, 20);
             this.textBox3.TabIndex = 7;
@@ -389,7 +389,7 @@ namespace WindowsFormsApp1
             // 
             // checkAddititonalServicesButton
             // 
-            this.checkAddititonalServicesButton.Location = new System.Drawing.Point(734, 96);
+            this.checkAddititonalServicesButton.Location = new System.Drawing.Point(734, 88);
             this.checkAddititonalServicesButton.Name = "checkAddititonalServicesButton";
             this.checkAddititonalServicesButton.Size = new System.Drawing.Size(279, 37);
             this.checkAddititonalServicesButton.TabIndex = 36;
@@ -399,9 +399,9 @@ namespace WindowsFormsApp1
             // 
             // changeLivingDataButton
             // 
-            this.changeLivingDataButton.Location = new System.Drawing.Point(234, 389);
+            this.changeLivingDataButton.Location = new System.Drawing.Point(196, 390);
             this.changeLivingDataButton.Name = "changeLivingDataButton";
-            this.changeLivingDataButton.Size = new System.Drawing.Size(242, 23);
+            this.changeLivingDataButton.Size = new System.Drawing.Size(236, 23);
             this.changeLivingDataButton.TabIndex = 33;
             this.changeLivingDataButton.Text = "Изменить данные выбранного проживания";
             this.changeLivingDataButton.UseVisualStyleBackColor = true;
@@ -409,9 +409,9 @@ namespace WindowsFormsApp1
             // 
             // deleteLivingDataButton
             // 
-            this.deleteLivingDataButton.Location = new System.Drawing.Point(3, 389);
+            this.deleteLivingDataButton.Location = new System.Drawing.Point(6, 390);
             this.deleteLivingDataButton.Name = "deleteLivingDataButton";
-            this.deleteLivingDataButton.Size = new System.Drawing.Size(225, 23);
+            this.deleteLivingDataButton.Size = new System.Drawing.Size(184, 23);
             this.deleteLivingDataButton.TabIndex = 32;
             this.deleteLivingDataButton.Text = "Удалить выбранное проживание";
             this.deleteLivingDataButton.UseVisualStyleBackColor = true;
@@ -430,7 +430,7 @@ namespace WindowsFormsApp1
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(735, 72);
+            this.label9.Location = new System.Drawing.Point(731, 65);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 13);
             this.label9.TabIndex = 29;
@@ -439,7 +439,7 @@ namespace WindowsFormsApp1
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(735, 42);
+            this.label10.Location = new System.Drawing.Point(731, 39);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 13);
             this.label10.TabIndex = 28;
@@ -447,7 +447,7 @@ namespace WindowsFormsApp1
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(844, 69);
+            this.textBox11.Location = new System.Drawing.Point(844, 62);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(169, 20);
             this.textBox11.TabIndex = 23;
@@ -455,7 +455,7 @@ namespace WindowsFormsApp1
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(844, 39);
+            this.textBox12.Location = new System.Drawing.Point(844, 36);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(169, 20);
             this.textBox12.TabIndex = 22;
@@ -463,7 +463,7 @@ namespace WindowsFormsApp1
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(3, 9);
+            this.textBox9.Location = new System.Drawing.Point(6, 6);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(722, 24);
@@ -471,7 +471,7 @@ namespace WindowsFormsApp1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(734, 9);
+            this.button2.Location = new System.Drawing.Point(734, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(279, 24);
             this.button2.TabIndex = 3;
@@ -482,9 +482,9 @@ namespace WindowsFormsApp1
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 39);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 36);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(722, 344);
+            this.dataGridView2.Size = new System.Drawing.Size(722, 348);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
@@ -514,7 +514,7 @@ namespace WindowsFormsApp1
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(987, 107);
+            this.checkBox1.Location = new System.Drawing.Point(984, 106);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 54;
@@ -523,7 +523,7 @@ namespace WindowsFormsApp1
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(736, 112);
+            this.label12.Location = new System.Drawing.Point(735, 112);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(153, 13);
             this.label12.TabIndex = 53;
@@ -532,7 +532,7 @@ namespace WindowsFormsApp1
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(736, 99);
+            this.label11.Location = new System.Drawing.Point(735, 99);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(234, 13);
             this.label11.TabIndex = 52;
@@ -540,7 +540,7 @@ namespace WindowsFormsApp1
             // 
             // changeBookingDataButton
             // 
-            this.changeBookingDataButton.Location = new System.Drawing.Point(235, 387);
+            this.changeBookingDataButton.Location = new System.Drawing.Point(237, 390);
             this.changeBookingDataButton.Name = "changeBookingDataButton";
             this.changeBookingDataButton.Size = new System.Drawing.Size(270, 23);
             this.changeBookingDataButton.TabIndex = 50;
@@ -550,7 +550,7 @@ namespace WindowsFormsApp1
             // 
             // deleteBookingDataButton
             // 
-            this.deleteBookingDataButton.Location = new System.Drawing.Point(4, 387);
+            this.deleteBookingDataButton.Location = new System.Drawing.Point(6, 390);
             this.deleteBookingDataButton.Name = "deleteBookingDataButton";
             this.deleteBookingDataButton.Size = new System.Drawing.Size(225, 23);
             this.deleteBookingDataButton.TabIndex = 49;
@@ -560,7 +560,7 @@ namespace WindowsFormsApp1
             // 
             // moveToCustomerFromBookingButton
             // 
-            this.moveToCustomerFromBookingButton.Location = new System.Drawing.Point(734, 388);
+            this.moveToCustomerFromBookingButton.Location = new System.Drawing.Point(734, 390);
             this.moveToCustomerFromBookingButton.Name = "moveToCustomerFromBookingButton";
             this.moveToCustomerFromBookingButton.Size = new System.Drawing.Size(279, 23);
             this.moveToCustomerFromBookingButton.TabIndex = 48;
@@ -571,7 +571,7 @@ namespace WindowsFormsApp1
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(736, 70);
+            this.label8.Location = new System.Drawing.Point(735, 65);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 13);
             this.label8.TabIndex = 46;
@@ -580,7 +580,7 @@ namespace WindowsFormsApp1
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(736, 40);
+            this.label14.Location = new System.Drawing.Point(735, 39);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(103, 13);
             this.label14.TabIndex = 45;
@@ -588,21 +588,21 @@ namespace WindowsFormsApp1
             // 
             // textBox16
             // 
-            this.textBox16.Location = new System.Drawing.Point(845, 67);
+            this.textBox16.Location = new System.Drawing.Point(844, 62);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(169, 20);
             this.textBox16.TabIndex = 41;
             // 
             // textBox17
             // 
-            this.textBox17.Location = new System.Drawing.Point(845, 37);
+            this.textBox17.Location = new System.Drawing.Point(844, 36);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(169, 20);
             this.textBox17.TabIndex = 40;
             // 
             // textBox21
             // 
-            this.textBox21.Location = new System.Drawing.Point(4, 7);
+            this.textBox21.Location = new System.Drawing.Point(6, 6);
             this.textBox21.Multiline = true;
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(722, 24);
@@ -610,7 +610,7 @@ namespace WindowsFormsApp1
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(735, 7);
+            this.button9.Location = new System.Drawing.Point(734, 6);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(279, 24);
             this.button9.TabIndex = 35;
@@ -621,9 +621,9 @@ namespace WindowsFormsApp1
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(4, 37);
+            this.dataGridView3.Location = new System.Drawing.Point(6, 37);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(722, 344);
+            this.dataGridView3.Size = new System.Drawing.Size(722, 347);
             this.dataGridView3.TabIndex = 34;
             this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
@@ -658,7 +658,7 @@ namespace WindowsFormsApp1
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(847, 153);
+            this.label20.Location = new System.Drawing.Point(848, 154);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(15, 13);
             this.label20.TabIndex = 52;
@@ -666,14 +666,14 @@ namespace WindowsFormsApp1
             // 
             // newDiscountTextBox
             // 
-            this.newDiscountTextBox.Location = new System.Drawing.Point(824, 150);
+            this.newDiscountTextBox.Location = new System.Drawing.Point(825, 151);
             this.newDiscountTextBox.Name = "newDiscountTextBox";
             this.newDiscountTextBox.Size = new System.Drawing.Size(21, 20);
             this.newDiscountTextBox.TabIndex = 51;
             // 
             // changeDiscountButton
             // 
-            this.changeDiscountButton.Location = new System.Drawing.Point(737, 148);
+            this.changeDiscountButton.Location = new System.Drawing.Point(738, 149);
             this.changeDiscountButton.Name = "changeDiscountButton";
             this.changeDiscountButton.Size = new System.Drawing.Size(81, 23);
             this.changeDiscountButton.TabIndex = 50;
@@ -684,7 +684,7 @@ namespace WindowsFormsApp1
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(851, 132);
+            this.label19.Location = new System.Drawing.Point(852, 133);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(41, 13);
             this.label19.TabIndex = 49;
@@ -693,7 +693,7 @@ namespace WindowsFormsApp1
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(738, 132);
+            this.label18.Location = new System.Drawing.Point(739, 133);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(107, 13);
             this.label18.TabIndex = 48;
@@ -701,7 +701,7 @@ namespace WindowsFormsApp1
             // 
             // editImagesOfApartmentButton
             // 
-            this.editImagesOfApartmentButton.Location = new System.Drawing.Point(424, 390);
+            this.editImagesOfApartmentButton.Location = new System.Drawing.Point(425, 390);
             this.editImagesOfApartmentButton.Name = "editImagesOfApartmentButton";
             this.editImagesOfApartmentButton.Size = new System.Drawing.Size(162, 23);
             this.editImagesOfApartmentButton.TabIndex = 47;
@@ -719,7 +719,7 @@ namespace WindowsFormsApp1
             // 
             // changeApartmentsButton
             // 
-            this.changeApartmentsButton.Location = new System.Drawing.Point(192, 390);
+            this.changeApartmentsButton.Location = new System.Drawing.Point(193, 390);
             this.changeApartmentsButton.Name = "changeApartmentsButton";
             this.changeApartmentsButton.Size = new System.Drawing.Size(226, 23);
             this.changeApartmentsButton.TabIndex = 45;
@@ -729,7 +729,7 @@ namespace WindowsFormsApp1
             // 
             // deleteApartmentsButton
             // 
-            this.deleteApartmentsButton.Location = new System.Drawing.Point(5, 390);
+            this.deleteApartmentsButton.Location = new System.Drawing.Point(6, 390);
             this.deleteApartmentsButton.Name = "deleteApartmentsButton";
             this.deleteApartmentsButton.Size = new System.Drawing.Size(181, 23);
             this.deleteApartmentsButton.TabIndex = 44;
@@ -754,7 +754,7 @@ namespace WindowsFormsApp1
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(734, 92);
+            this.label16.Location = new System.Drawing.Point(735, 92);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(98, 13);
             this.label16.TabIndex = 40;
@@ -763,7 +763,7 @@ namespace WindowsFormsApp1
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(734, 65);
+            this.label15.Location = new System.Drawing.Point(735, 65);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 13);
             this.label15.TabIndex = 39;
@@ -780,7 +780,7 @@ namespace WindowsFormsApp1
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(5, 6);
+            this.textBox7.Location = new System.Drawing.Point(6, 6);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(722, 24);
@@ -788,7 +788,7 @@ namespace WindowsFormsApp1
             // 
             // newNumber
             // 
-            this.newNumber.Location = new System.Drawing.Point(737, 390);
+            this.newNumber.Location = new System.Drawing.Point(734, 390);
             this.newNumber.Name = "newNumber";
             this.newNumber.Size = new System.Drawing.Size(279, 23);
             this.newNumber.TabIndex = 6;
@@ -798,7 +798,7 @@ namespace WindowsFormsApp1
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(737, 6);
+            this.button4.Location = new System.Drawing.Point(734, 6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(279, 24);
             this.button4.TabIndex = 3;
@@ -809,7 +809,7 @@ namespace WindowsFormsApp1
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(5, 36);
+            this.dataGridView4.Location = new System.Drawing.Point(6, 35);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(722, 349);
             this.dataGridView4.TabIndex = 2;
@@ -821,8 +821,12 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 450);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1048, 489);
+            this.MinimumSize = new System.Drawing.Size(1048, 489);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "АРМ администратора гостинницы";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -844,8 +848,8 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button addCustomerButton;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button addCustomerButton;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -867,33 +871,32 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox searchTextBox;
         public System.Windows.Forms.DataGridView dataGridView2;
         public System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button moveToBookingsBotton;
-        private System.Windows.Forms.Button moveToLivingsButton;
-        private System.Windows.Forms.Button changeCustomerDataButton;
-        private System.Windows.Forms.Button deleteCustomerButton;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Button moveToBookingsBotton;
+        public System.Windows.Forms.Button changeCustomerDataButton;
+        public System.Windows.Forms.Button deleteCustomerButton;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Button moveToCustomerFromLivingButton;
-        private System.Windows.Forms.Button changeLivingDataButton;
-        private System.Windows.Forms.Button deleteLivingDataButton;
-        private System.Windows.Forms.Button changeBookingDataButton;
-        private System.Windows.Forms.Button deleteBookingDataButton;
-        private System.Windows.Forms.Button moveToCustomerFromBookingButton;
+        public System.Windows.Forms.Button moveToCustomerFromLivingButton;
+        public System.Windows.Forms.Button changeLivingDataButton;
+        public System.Windows.Forms.Button deleteLivingDataButton;
+        public System.Windows.Forms.Button changeBookingDataButton;
+        public System.Windows.Forms.Button deleteBookingDataButton;
+        public System.Windows.Forms.Button moveToCustomerFromBookingButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.Button button9;
+        public System.Windows.Forms.Button button9;
         public System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button newNumber;
-        private System.Windows.Forms.Button checkAddititonalServicesButton;
+        public System.Windows.Forms.Button newNumber;
+        public System.Windows.Forms.Button checkAddititonalServicesButton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.CheckBox checkBox1;
@@ -903,15 +906,16 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button changeApartmentsButton;
-        private System.Windows.Forms.Button deleteApartmentsButton;
+        public System.Windows.Forms.Button changeApartmentsButton;
+        public System.Windows.Forms.Button deleteApartmentsButton;
         private System.Windows.Forms.ComboBox typeComboBox;
-        private System.Windows.Forms.Button editImagesOfApartmentButton;
+        public System.Windows.Forms.Button editImagesOfApartmentButton;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox newDiscountTextBox;
-        private System.Windows.Forms.Button changeDiscountButton;
+        public System.Windows.Forms.Button changeDiscountButton;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
+        public System.Windows.Forms.Button moveToLivingsButton;
     }
 }
 

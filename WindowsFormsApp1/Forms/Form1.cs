@@ -43,6 +43,59 @@ namespace WindowsFormsApp1
                 c.Open();
             }
         }
+        public void SetButtonsInactive0()
+        {
+            deleteCustomerButton.Enabled = false;
+            changeCustomerDataButton.Enabled = false;
+            moveToLivingsButton.Enabled = false;
+            moveToBookingsBotton.Enabled = false;
+        }
+        public void SetButtonsActive0()
+        {
+            deleteCustomerButton.Enabled = true;
+            changeCustomerDataButton.Enabled = true;
+            moveToLivingsButton.Enabled = true;
+            moveToBookingsBotton.Enabled = true;
+        }
+        public void SetButtonsInactive1()
+        {
+            deleteLivingDataButton.Enabled = false;
+            changeLivingDataButton.Enabled = false;
+            checkAddititonalServicesButton.Enabled = false;
+            moveToCustomerFromLivingButton.Enabled = false;
+        }
+        public void SetButtonsActive1()
+        {
+            deleteLivingDataButton.Enabled = true;
+            changeLivingDataButton.Enabled = true;
+            checkAddititonalServicesButton.Enabled = true;
+            moveToCustomerFromLivingButton.Enabled = true;
+        }
+        public void SetButtonsInactive2()
+        {
+            deleteBookingDataButton.Enabled = false;
+            changeBookingDataButton.Enabled = false;
+            moveToCustomerFromBookingButton.Enabled = false;
+        }
+        public void SetButtonsActive2()
+        {
+            deleteBookingDataButton.Enabled = true;
+            changeBookingDataButton.Enabled = true;
+            moveToCustomerFromBookingButton.Enabled = true;
+        }
+        public void SetButtonsInactive3()
+        {
+            deleteApartmentsButton.Enabled = false;
+            changeApartmentsButton.Enabled = false;
+            editImagesOfApartmentButton.Enabled = false;
+        }
+        public void SetButtonsActive3()
+        {
+            deleteApartmentsButton.Enabled = true;
+            changeApartmentsButton.Enabled = true;
+            editImagesOfApartmentButton.Enabled = true;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -63,37 +116,61 @@ namespace WindowsFormsApp1
             discount = RequestsSQLT.GetCurrentDiscount(conn);
             label19.Text = discount.ToString() + " %";
             typeComboBox.Items.AddRange(admissibleTypesOfApartments);
+            SetButtonsInactive0();
+            SetButtonsInactive1();
+            SetButtonsInactive2();
+            SetButtonsInactive3();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public void Refresh1()
         {
             OpenConnectionCorrect(conn);
             dataGridView1.DataSource = RequestsSQLT.SelectAllFromCustomer(conn);
             ElementsSettings.SetDefaultSettingsToDGV(dataGridView1);
+            ElementsSettings.RenameCustomerDGV(dataGridView1);
         }
-        private void button2_Click(object sender, EventArgs e)
+        public void Refresh2()
         {
             OpenConnectionCorrect(conn);
             dataGridView2.DataSource = RequestsSQLT.SelectAllFromLiving(conn);
             ElementsSettings.SetDefaultSettingsToDGV(dataGridView2);
             ElementsSettings.HideFirstXColumns(dataGridView2, 2);
             ElementsSettings.HideLastXColumns(dataGridView2, 2);
+            ElementsSettings.RenameLivingOrBookingDGV(dataGridView2);
         }
-
-        private void button9_Click(object sender, EventArgs e)
+        public void Refresh3()
         {
             OpenConnectionCorrect(conn);
             dataGridView3.DataSource = RequestsSQLT.SelectAllFromBooking(conn);
             ElementsSettings.SetDefaultSettingsToDGV(dataGridView3);
             ElementsSettings.HideFirstXColumns(dataGridView3, 2);
             ElementsSettings.HideLastXColumns(dataGridView3, 2);
+            ElementsSettings.RenameLivingOrBookingDGV(dataGridView3);
         }
-
-        private void button4_Click(object sender, EventArgs e)
+        public void Refresh4()
         {
             OpenConnectionCorrect(conn);
             dataGridView4.DataSource = RequestsSQLT.SelectAllFromApartments(conn);
             ElementsSettings.SetDefaultSettingsToDGV(dataGridView4);
+            ElementsSettings.RenameApartmentsDGV(dataGridView4);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Refresh1();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Refresh2();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Refresh3();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Refresh4();
         }
 
         private void addCustomerButton_Click(object sender, EventArgs e)
@@ -127,54 +204,70 @@ namespace WindowsFormsApp1
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string[] s = ElementsSettings.SetDataFromCustomersDGVToTextBoxes(dataGridView1, e);
-            idOfChosenRow1 = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(conn, Convert.ToInt32(s[0]), Convert.ToInt32(s[1])));
-            textBox1.Text = s[0] + "  " + s[1] + "  " + s[2] + "  " + s[3] + "  " + s[4] + "  " + s[5] + "  " + s[6];
-            textBox2.Text = s[0];
-            textBox3.Text = s[1];
-            textBox4.Text = s[2];
-            textBox5.Text = s[3];
-            textBox6.Text = s[4];
-            dateTimePicker1.Value = Convert.ToDateTime(s[5]);
-            //textBox7.Text = s[6];
-            textBox8.Text = s[6];
+            SetButtonsActive0();
+            try
+            {
+                string[] s = ElementsSettings.SetDataFromCustomersDGVToTextBoxes(dataGridView1, e);
+                idOfChosenRow1 = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(conn, Convert.ToInt32(s[0]), Convert.ToInt32(s[1])));
+                textBox1.Text = s[0] + "  " + s[1] + "  " + s[2] + "  " + s[3] + "  " + s[4] + "  " + s[5] + "  " + s[6];
+                textBox2.Text = s[0];
+                textBox3.Text = s[1];
+                textBox4.Text = s[2];
+                textBox5.Text = s[3];
+                textBox6.Text = s[4];
+                dateTimePicker1.Value = Convert.ToDateTime(s[5]);
+                //textBox7.Text = s[6];
+                textBox8.Text = s[6];
+            } catch { }
         }
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string[] s = ElementsSettings.SetDataFromLivingOrBookingDGVToTextBoxes(dataGridView2, e);
-            idOfChosenRow2 = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(conn, Convert.ToInt32(s[0]), Convert.ToInt32(s[1])));
-            textBox9.Text = s[0] + "  " + s[1] + "  " + s[2] + "  " + s[3] + "  " + s[4] + " " + s[5] + " " + s[6] + " " + s[7] + " " + s[8];
-            textBox12.Text = s[5];
-            textBox11.Text = s[6];
-            if (s[7] != "")
+            SetButtonsActive1();
+            try
             {
-                idOfChosenRowAS = Convert.ToInt32(s[7]);
-            }
-            if (s[8] != "")
-            {
-                idOfChosenRowLiving = Convert.ToInt32(s[8]);
-            }
+                string[] s = ElementsSettings.SetDataFromLivingOrBookingDGVToTextBoxes(dataGridView2, e);
+                idOfChosenRow2 = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(conn, Convert.ToInt32(s[0]), Convert.ToInt32(s[1])));
+                textBox9.Text = s[0] + "  " + s[1] + "  " + s[2] + "  " + s[3] + "  " + s[4] + " " + s[5] + " " + s[6] + " " + s[7] + " " + s[8];
+                textBox12.Text = s[5];
+                textBox11.Text = s[6];
+                if (s[7] != "")
+                {
+                    idOfChosenRowAS = Convert.ToInt32(s[7]);
+                }
+                if (s[8] != "")
+                {
+                    idOfChosenRowLiving = Convert.ToInt32(s[8]);
+                }
+            } catch { }
         }
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            bookingS = ElementsSettings.SetDataFromLivingOrBookingDGVToTextBoxes(dataGridView3, e);
-            idOfChosenRow3 = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(conn, Convert.ToInt32(bookingS[0]), Convert.ToInt32(bookingS[1])));
-            textBox21.Text = bookingS[0] + "  " + bookingS[1] + "  " + bookingS[2] + "  " + bookingS[3] + "  " + bookingS[4] + " " + bookingS[5] + " " + bookingS[6] + " " + bookingS[7] + " " + bookingS[8];
-            textBox17.Text = bookingS[5];
-            textBox16.Text = bookingS[6];
-            if (bookingS[7] != "")
+            SetButtonsActive2();
+            try
             {
-                idOfChosenRowBooking = Convert.ToInt32(bookingS[8]);
-            }
+                bookingS = ElementsSettings.SetDataFromLivingOrBookingDGVToTextBoxes(dataGridView3, e);
+                idOfChosenRow3 = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(conn, Convert.ToInt32(bookingS[0]), Convert.ToInt32(bookingS[1])));
+                textBox21.Text = bookingS[0] + "  " + bookingS[1] + "  " + bookingS[2] + "  " + bookingS[3] + "  " + bookingS[4] + " " + bookingS[5] + " " + bookingS[6] + " " + bookingS[7] + " " + bookingS[8];
+                textBox17.Text = bookingS[5];
+                textBox16.Text = bookingS[6];
+                if (bookingS[7] != "")
+                {
+                    idOfChosenRowBooking = Convert.ToInt32(bookingS[8]);
+                }
+            } catch { }
         }
         private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            bookingS = ElementsSettings.SetDataFromApartmentsDGVToTextBoxes(dataGridView4, e);
-            textBox7.Text = bookingS[0] + "  " + bookingS[1] + "  " + bookingS[2];
-            numberOfChosenRow = Convert.ToInt32(bookingS[0]);
-            numberTextBox.Text = bookingS[0];
-            typeComboBox.Text = bookingS[1];
-            priceTextBox.Text = bookingS[2];
+            SetButtonsActive3();
+            try
+            {
+                bookingS = ElementsSettings.SetDataFromApartmentsDGVToTextBoxes(dataGridView4, e);
+                textBox7.Text = bookingS[0] + "  " + bookingS[1] + "  " + bookingS[2];
+                numberOfChosenRow = Convert.ToInt32(bookingS[0]);
+                numberTextBox.Text = bookingS[0];
+                typeComboBox.Text = bookingS[1];
+                priceTextBox.Text = bookingS[2];
+            } catch { }
         }
         private void searchTextBox_Enter(object sender, EventArgs e)
         {
@@ -249,6 +342,7 @@ namespace WindowsFormsApp1
                     SqlCommand command = new SqlCommand();
                     command = new SqlCommand($"UPDATE Customer SET passport_series = {Convert.ToInt32(textBox2.Text)}, passport_number = {Convert.ToInt32(textBox3.Text)}, name = '{textBox4.Text}', surname = '{textBox5.Text}', patronymic = '{textBox6.Text}', birthday = '{dateTimePicker1.Value}', tel_number = '{textBox8.Text}' WHERE customer_id = {idOfChosenRow1}", conn);
                     command.ExecuteNonQuery();
+                    Refresh1();
                 }
                 else
                 {
@@ -271,6 +365,9 @@ namespace WindowsFormsApp1
                 command1.ExecuteNonQuery();
                 command2.ExecuteNonQuery();
                 command3.ExecuteNonQuery();
+                Refresh1();
+                Refresh2();
+                Refresh3();
             }
         }
         private void searchTextBox_TextChanged(object sender, EventArgs e)
@@ -337,6 +434,7 @@ namespace WindowsFormsApp1
                     SqlCommand command = new SqlCommand();
                     command = new SqlCommand($"UPDATE Living SET value_of_guests = {Convert.ToInt32(textBox12.Text)}, value_of_kids = {Convert.ToInt32(textBox11.Text)} WHERE living_id = {idOfChosenRowLiving}", conn);
                     command.ExecuteNonQuery();
+                    Refresh2();
                 }
                 else
                 {
@@ -353,6 +451,7 @@ namespace WindowsFormsApp1
                 SqlCommand command = new SqlCommand();
                 command = new SqlCommand($"DELETE FROM Living WHERE living_id = {idOfChosenRowLiving}", conn);
                 command.ExecuteNonQuery();
+                Refresh2();
             }
             if (RequestsSQLT.DoesCustomerHasNoLivivngsAndBookings(conn, idOfChosenRow2) == true)
             {
@@ -362,6 +461,7 @@ namespace WindowsFormsApp1
                     SqlCommand command0 = new SqlCommand();
                     command0 = new SqlCommand($"DELETE FROM Customer WHERE customer_id = {idOfChosenRow2}", conn);
                     command0.ExecuteNonQuery();
+                    Refresh1();
                 }
             }
         }
@@ -392,6 +492,7 @@ namespace WindowsFormsApp1
                     SqlCommand command = new SqlCommand();
                     command = new SqlCommand($"UPDATE Booking SET value_of_guests = {Convert.ToInt32(textBox12.Text)}, value_of_kids = {Convert.ToInt32(textBox11.Text)} WHERE booking_id = {idOfChosenRowBooking}", conn);
                     command.ExecuteNonQuery();
+                    Refresh3();
                 }
                 else
                 {
@@ -408,6 +509,7 @@ namespace WindowsFormsApp1
                 SqlCommand command = new SqlCommand();
                 command = new SqlCommand($"DELETE FROM Booking WHERE booking_id = {idOfChosenRowBooking}", conn);
                 command.ExecuteNonQuery();
+                Refresh3();
             }
             if (RequestsSQLT.DoesCustomerHasNoLivivngsAndBookings(conn, idOfChosenRow3) == true)
             {
@@ -417,6 +519,7 @@ namespace WindowsFormsApp1
                     SqlCommand command0 = new SqlCommand();
                     command0 = new SqlCommand($"DELETE FROM Customer WHERE customer_id = {idOfChosenRow3}", conn);
                     command0.ExecuteNonQuery();
+                    Refresh1();
                 }
             }
         }
@@ -431,6 +534,7 @@ namespace WindowsFormsApp1
                     SqlCommand command = new SqlCommand();
                     command = new SqlCommand($"UPDATE Apartments SET number = {Convert.ToInt32(numberTextBox.Text)}, \"type\" = '{typeComboBox.Text}', price = {Convert.ToInt32(priceTextBox.Text)} WHERE number = {Convert.ToInt32(numberTextBox.Text)}", conn);
                     command.ExecuteNonQuery();
+                    Refresh4();
                 }
                 else
                 {
@@ -452,6 +556,7 @@ namespace WindowsFormsApp1
                     SqlCommand command2 = new SqlCommand();
                     command2 = new SqlCommand($"DELETE FROM Photos WHERE number = {Convert.ToInt32(numberTextBox.Text)}", conn);
                     command2.ExecuteNonQuery();
+                    Refresh4();
                 }
                 else
                 {
@@ -466,6 +571,15 @@ namespace WindowsFormsApp1
             ViewingApartmentsPhotos vap = new ViewingApartmentsPhotos();
             vap.ShowDialog();
             vap.Focus();
+        }
+
+
+        public void Form1_Load(object sender, EventArgs e)
+        {
+            Refresh1();
+            Refresh2();
+            Refresh3();
+            Refresh4();
         }
     }
 }

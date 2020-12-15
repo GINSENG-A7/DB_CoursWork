@@ -504,8 +504,11 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.CheckAndAddCustomerData);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(985, 457);
+            this.MinimumSize = new System.Drawing.Size(985, 457);
             this.Name = "AddingNewCustomer";
-            this.Text = "AddingNewCustomer";
+            this.Text = "Регистрация клиента";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewANC)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

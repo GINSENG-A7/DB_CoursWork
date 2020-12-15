@@ -96,8 +96,11 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.addImageButton);
             this.Controls.Add(this.deleteImageButton);
             this.Controls.Add(this.previousImageButton);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "ViewingApartmentsPhotos";
-            this.Text = "ViewingApartmentsPhotos";
+            this.Text = "Просмотр фотографий";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

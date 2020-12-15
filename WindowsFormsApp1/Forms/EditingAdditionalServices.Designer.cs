@@ -165,8 +165,11 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(286, 215);
+            this.MinimumSize = new System.Drawing.Size(286, 215);
             this.Name = "EditingAdditionalServices";
-            this.Text = "EditingAdditionalServices";
+            this.Text = "Работа с дополнительными услугами";
             this.ResumeLayout(false);
             this.PerformLayout();
 

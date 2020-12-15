@@ -239,6 +239,33 @@ namespace WindowsFormsApp1
                 x--;
             }
         }
+        public static void RenameCustomerDGV(DataGridView dgv)
+        {
+            dgv.Columns[0].HeaderCell.Value = "Серия";
+            dgv.Columns[1].HeaderCell.Value = "Номер";
+            dgv.Columns[2].HeaderCell.Value = "Имя";
+            dgv.Columns[3].HeaderCell.Value = "Фамилия";
+            dgv.Columns[4].HeaderCell.Value = "Отчество";
+            dgv.Columns[5].HeaderCell.Value = "Дата рождения";
+            dgv.Columns[6].HeaderCell.Value = "Телефон";
+        }
+        public static void RenameLivingOrBookingDGV(DataGridView dgv)
+        {
+            dgv.Columns[2].HeaderCell.Value = "Имя";
+            dgv.Columns[3].HeaderCell.Value = "Фамилия";
+            dgv.Columns[4].HeaderCell.Value = "Отчество";
+            dgv.Columns[5].HeaderCell.Value = "Дата заезда";
+            dgv.Columns[6].HeaderCell.Value = "Дата выезда";
+            dgv.Columns[7].HeaderCell.Value = "Номер";
+            dgv.Columns[8].HeaderCell.Value = "Количество гостей";
+            dgv.Columns[9].HeaderCell.Value = "Количество детей";
+        }
+        public static void RenameApartmentsDGV(DataGridView dgv)
+        {
+            dgv.Columns[0].HeaderCell.Value = "Номер";
+            dgv.Columns[1].HeaderCell.Value = "Тип";
+            dgv.Columns[2].HeaderCell.Value = "Стоимость суток за человека";
+        }
         public static string[] SetDataFromCustomersDGVToTextBoxes(DataGridView dgv, DataGridViewCellEventArgs e_local)
         {
             string[] collomnsValues = new string[7];
