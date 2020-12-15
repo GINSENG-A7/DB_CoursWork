@@ -25,7 +25,8 @@ namespace WindowsFormsApp1
         private void addImageButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            if(ofd.ShowDialog() == DialogResult.OK)
+            ofd.Filter = "Images (*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|" + "All files (*.*)|*.*";
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
                 try
                 {

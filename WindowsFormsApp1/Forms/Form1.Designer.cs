@@ -35,11 +35,6 @@ namespace WindowsFormsApp1
             this.addCustomerButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label20 = new System.Windows.Forms.Label();
-            this.newDiscountTextBox = new System.Windows.Forms.TextBox();
-            this.changeDiscountButton = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.changeCustomerDataButton = new System.Windows.Forms.Button();
             this.deleteCustomerButton = new System.Windows.Forms.Button();
@@ -86,19 +81,24 @@ namespace WindowsFormsApp1
             this.button9 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.newDiscountTextBox = new System.Windows.Forms.TextBox();
+            this.changeDiscountButton = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.editImagesOfApartmentButton = new System.Windows.Forms.Button();
+            this.typeComboBox = new System.Windows.Forms.ComboBox();
+            this.changeApartmentsButton = new System.Windows.Forms.Button();
+            this.deleteApartmentsButton = new System.Windows.Forms.Button();
+            this.priceTextBox = new System.Windows.Forms.TextBox();
+            this.numberTextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.newNumber = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.numberTextBox = new System.Windows.Forms.TextBox();
-            this.priceTextBox = new System.Windows.Forms.TextBox();
-            this.deleteApartmentsButton = new System.Windows.Forms.Button();
-            this.changeApartmentsButton = new System.Windows.Forms.Button();
-            this.typeComboBox = new System.Windows.Forms.ComboBox();
-            this.editImagesOfApartmentButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -161,11 +161,6 @@ namespace WindowsFormsApp1
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label20);
-            this.tabPage1.Controls.Add(this.newDiscountTextBox);
-            this.tabPage1.Controls.Add(this.changeDiscountButton);
-            this.tabPage1.Controls.Add(this.label19);
-            this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.changeCustomerDataButton);
             this.tabPage1.Controls.Add(this.deleteCustomerButton);
@@ -196,50 +191,6 @@ namespace WindowsFormsApp1
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Работа с клиентами";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(844, 299);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(15, 13);
-            this.label20.TabIndex = 30;
-            this.label20.Text = "%";
-            // 
-            // newDiscountTextBox
-            // 
-            this.newDiscountTextBox.Location = new System.Drawing.Point(821, 296);
-            this.newDiscountTextBox.Name = "newDiscountTextBox";
-            this.newDiscountTextBox.Size = new System.Drawing.Size(21, 20);
-            this.newDiscountTextBox.TabIndex = 29;
-            // 
-            // changeDiscountButton
-            // 
-            this.changeDiscountButton.Location = new System.Drawing.Point(734, 294);
-            this.changeDiscountButton.Name = "changeDiscountButton";
-            this.changeDiscountButton.Size = new System.Drawing.Size(81, 23);
-            this.changeDiscountButton.TabIndex = 28;
-            this.changeDiscountButton.Text = "Заменить на";
-            this.changeDiscountButton.UseVisualStyleBackColor = true;
-            this.changeDiscountButton.Click += new System.EventHandler(this.changeDiscountButton_Click);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(848, 278);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 13);
-            this.label19.TabIndex = 27;
-            this.label19.Text = "label19";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(735, 278);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(107, 13);
-            this.label18.TabIndex = 26;
-            this.label18.Text = "Скидка за ребёнка:";
             // 
             // dateTimePicker1
             // 
@@ -678,6 +629,11 @@ namespace WindowsFormsApp1
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label20);
+            this.tabPage4.Controls.Add(this.newDiscountTextBox);
+            this.tabPage4.Controls.Add(this.changeDiscountButton);
+            this.tabPage4.Controls.Add(this.label19);
+            this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.editImagesOfApartmentButton);
             this.tabPage4.Controls.Add(this.typeComboBox);
             this.tabPage4.Controls.Add(this.changeApartmentsButton);
@@ -698,6 +654,137 @@ namespace WindowsFormsApp1
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Работа с номерами";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(847, 153);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(15, 13);
+            this.label20.TabIndex = 52;
+            this.label20.Text = "%";
+            // 
+            // newDiscountTextBox
+            // 
+            this.newDiscountTextBox.Location = new System.Drawing.Point(824, 150);
+            this.newDiscountTextBox.Name = "newDiscountTextBox";
+            this.newDiscountTextBox.Size = new System.Drawing.Size(21, 20);
+            this.newDiscountTextBox.TabIndex = 51;
+            // 
+            // changeDiscountButton
+            // 
+            this.changeDiscountButton.Location = new System.Drawing.Point(737, 148);
+            this.changeDiscountButton.Name = "changeDiscountButton";
+            this.changeDiscountButton.Size = new System.Drawing.Size(81, 23);
+            this.changeDiscountButton.TabIndex = 50;
+            this.changeDiscountButton.Text = "Заменить на";
+            this.changeDiscountButton.UseVisualStyleBackColor = true;
+            this.changeDiscountButton.Click += new System.EventHandler(this.changeDiscountButton_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(851, 132);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 13);
+            this.label19.TabIndex = 49;
+            this.label19.Text = "label19";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(738, 132);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(107, 13);
+            this.label18.TabIndex = 48;
+            this.label18.Text = "Скидка за ребёнка:";
+            // 
+            // editImagesOfApartmentButton
+            // 
+            this.editImagesOfApartmentButton.Location = new System.Drawing.Point(424, 390);
+            this.editImagesOfApartmentButton.Name = "editImagesOfApartmentButton";
+            this.editImagesOfApartmentButton.Size = new System.Drawing.Size(162, 23);
+            this.editImagesOfApartmentButton.TabIndex = 47;
+            this.editImagesOfApartmentButton.Text = "Фото выбранного номера";
+            this.editImagesOfApartmentButton.UseVisualStyleBackColor = true;
+            this.editImagesOfApartmentButton.Click += new System.EventHandler(this.editImagesOfApartmentButton_Click);
+            // 
+            // typeComboBox
+            // 
+            this.typeComboBox.FormattingEnabled = true;
+            this.typeComboBox.Location = new System.Drawing.Point(865, 62);
+            this.typeComboBox.Name = "typeComboBox";
+            this.typeComboBox.Size = new System.Drawing.Size(148, 21);
+            this.typeComboBox.TabIndex = 46;
+            // 
+            // changeApartmentsButton
+            // 
+            this.changeApartmentsButton.Location = new System.Drawing.Point(192, 390);
+            this.changeApartmentsButton.Name = "changeApartmentsButton";
+            this.changeApartmentsButton.Size = new System.Drawing.Size(226, 23);
+            this.changeApartmentsButton.TabIndex = 45;
+            this.changeApartmentsButton.Text = "Изменить данные о выбранном номере";
+            this.changeApartmentsButton.UseVisualStyleBackColor = true;
+            this.changeApartmentsButton.Click += new System.EventHandler(this.changeApartmentsButton_Click);
+            // 
+            // deleteApartmentsButton
+            // 
+            this.deleteApartmentsButton.Location = new System.Drawing.Point(5, 390);
+            this.deleteApartmentsButton.Name = "deleteApartmentsButton";
+            this.deleteApartmentsButton.Size = new System.Drawing.Size(181, 23);
+            this.deleteApartmentsButton.TabIndex = 44;
+            this.deleteApartmentsButton.Text = "Удалить выбранный номер";
+            this.deleteApartmentsButton.UseVisualStyleBackColor = true;
+            this.deleteApartmentsButton.Click += new System.EventHandler(this.deleteApartmentsButton_Click);
+            // 
+            // priceTextBox
+            // 
+            this.priceTextBox.Location = new System.Drawing.Point(865, 89);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(148, 20);
+            this.priceTextBox.TabIndex = 43;
+            // 
+            // numberTextBox
+            // 
+            this.numberTextBox.Location = new System.Drawing.Point(865, 36);
+            this.numberTextBox.Name = "numberTextBox";
+            this.numberTextBox.Size = new System.Drawing.Size(148, 20);
+            this.numberTextBox.TabIndex = 41;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(734, 92);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 13);
+            this.label16.TabIndex = 40;
+            this.label16.Text = "Цена за человека";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(734, 65);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 13);
+            this.label15.TabIndex = 39;
+            this.label15.Text = "Тип номера";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(734, 39);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(125, 13);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Числовое обозначение";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(5, 6);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(722, 24);
+            this.textBox7.TabIndex = 37;
             // 
             // newNumber
             // 
@@ -727,93 +814,6 @@ namespace WindowsFormsApp1
             this.dataGridView4.Size = new System.Drawing.Size(722, 349);
             this.dataGridView4.TabIndex = 2;
             this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(5, 6);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(722, 24);
-            this.textBox7.TabIndex = 37;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(734, 39);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(125, 13);
-            this.label13.TabIndex = 38;
-            this.label13.Text = "Числовое обозначение";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(734, 65);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(67, 13);
-            this.label15.TabIndex = 39;
-            this.label15.Text = "Тип номера";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(734, 92);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(98, 13);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "Цена за человека";
-            // 
-            // numberTextBox
-            // 
-            this.numberTextBox.Location = new System.Drawing.Point(865, 36);
-            this.numberTextBox.Name = "numberTextBox";
-            this.numberTextBox.Size = new System.Drawing.Size(148, 20);
-            this.numberTextBox.TabIndex = 41;
-            // 
-            // priceTextBox
-            // 
-            this.priceTextBox.Location = new System.Drawing.Point(865, 89);
-            this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(148, 20);
-            this.priceTextBox.TabIndex = 43;
-            // 
-            // deleteApartmentsButton
-            // 
-            this.deleteApartmentsButton.Location = new System.Drawing.Point(5, 390);
-            this.deleteApartmentsButton.Name = "deleteApartmentsButton";
-            this.deleteApartmentsButton.Size = new System.Drawing.Size(181, 23);
-            this.deleteApartmentsButton.TabIndex = 44;
-            this.deleteApartmentsButton.Text = "Удалить выбранный номер";
-            this.deleteApartmentsButton.UseVisualStyleBackColor = true;
-            this.deleteApartmentsButton.Click += new System.EventHandler(this.deleteApartmentsButton_Click);
-            // 
-            // changeApartmentsButton
-            // 
-            this.changeApartmentsButton.Location = new System.Drawing.Point(192, 390);
-            this.changeApartmentsButton.Name = "changeApartmentsButton";
-            this.changeApartmentsButton.Size = new System.Drawing.Size(226, 23);
-            this.changeApartmentsButton.TabIndex = 45;
-            this.changeApartmentsButton.Text = "Изменить данные о выбранном номере";
-            this.changeApartmentsButton.UseVisualStyleBackColor = true;
-            this.changeApartmentsButton.Click += new System.EventHandler(this.changeApartmentsButton_Click);
-            // 
-            // typeComboBox
-            // 
-            this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Location = new System.Drawing.Point(865, 62);
-            this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(148, 21);
-            this.typeComboBox.TabIndex = 46;
-            // 
-            // editImagesOfApartmentButton
-            // 
-            this.editImagesOfApartmentButton.Location = new System.Drawing.Point(424, 390);
-            this.editImagesOfApartmentButton.Name = "editImagesOfApartmentButton";
-            this.editImagesOfApartmentButton.Size = new System.Drawing.Size(303, 23);
-            this.editImagesOfApartmentButton.TabIndex = 47;
-            this.editImagesOfApartmentButton.Text = "Редактировать фото выбранного номера";
-            this.editImagesOfApartmentButton.UseVisualStyleBackColor = true;
-            this.editImagesOfApartmentButton.Click += new System.EventHandler(this.editImagesOfApartmentButton_Click);
             // 
             // Form1
             // 
@@ -893,11 +893,6 @@ namespace WindowsFormsApp1
         public System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button newNumber;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox newDiscountTextBox;
-        private System.Windows.Forms.Button changeDiscountButton;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button checkAddititonalServicesButton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -912,6 +907,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button deleteApartmentsButton;
         private System.Windows.Forms.ComboBox typeComboBox;
         private System.Windows.Forms.Button editImagesOfApartmentButton;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox newDiscountTextBox;
+        private System.Windows.Forms.Button changeDiscountButton;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
     }
 }
 

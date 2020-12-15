@@ -216,7 +216,9 @@ namespace WindowsFormsApp1
             dgv.AllowUserToOrderColumns = true;
             dgv.AllowUserToResizeColumns = true;
             dgv.AllowUserToResizeColumns = true;
+            dgv.AllowUserToAddRows = false;
             dgv.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.ReadOnly = true;
         }
         public static void HideFirstXColumns(DataGridView dgv, int x)

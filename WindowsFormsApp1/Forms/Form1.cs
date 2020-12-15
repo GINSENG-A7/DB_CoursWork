@@ -446,9 +446,12 @@ namespace WindowsFormsApp1
             {
                 if (RequestsSQLT.NumberOfApartmentsIsFree(conn, numberOfChosenRow) == true) //Проверяем все ограничения ввода для таблицы клиентов
                 {
-                    SqlCommand command = new SqlCommand();
-                    command = new SqlCommand($"DELETE FROM Apartments WHERE number = {Convert.ToInt32(numberTextBox.Text)}", conn);
-                    command.ExecuteNonQuery();
+                    SqlCommand command1 = new SqlCommand();
+                    command1 = new SqlCommand($"DELETE FROM Apartments WHERE number = {Convert.ToInt32(numberTextBox.Text)}", conn);
+                    command1.ExecuteNonQuery();
+                    SqlCommand command2 = new SqlCommand();
+                    command2 = new SqlCommand($"DELETE FROM Photos WHERE number = {Convert.ToInt32(numberTextBox.Text)}", conn);
+                    command2.ExecuteNonQuery();
                 }
                 else
                 {
