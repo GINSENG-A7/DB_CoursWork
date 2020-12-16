@@ -196,10 +196,6 @@ namespace WindowsFormsApp1
             AddingNewNumber ann = new AddingNewNumber();
             ann.ShowDialog();
             ann.Focus();
-            if (ann.DialogResult == DialogResult.OK)
-            {
-                textBox1.Text = AddingNewNumber.str;
-            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -209,7 +205,6 @@ namespace WindowsFormsApp1
             {
                 string[] s = ElementsSettings.SetDataFromCustomersDGVToTextBoxes(dataGridView1, e);
                 idOfChosenRow1 = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(conn, Convert.ToInt32(s[0]), Convert.ToInt32(s[1])));
-                textBox1.Text = s[0] + "  " + s[1] + "  " + s[2] + "  " + s[3] + "  " + s[4] + "  " + s[5] + "  " + s[6];
                 textBox2.Text = s[0];
                 textBox3.Text = s[1];
                 textBox4.Text = s[2];
@@ -227,7 +222,6 @@ namespace WindowsFormsApp1
             {
                 string[] s = ElementsSettings.SetDataFromLivingOrBookingDGVToTextBoxes(dataGridView2, e);
                 idOfChosenRow2 = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(conn, Convert.ToInt32(s[0]), Convert.ToInt32(s[1])));
-                textBox9.Text = s[0] + "  " + s[1] + "  " + s[2] + "  " + s[3] + "  " + s[4] + " " + s[5] + " " + s[6] + " " + s[7] + " " + s[8];
                 textBox12.Text = s[5];
                 textBox11.Text = s[6];
                 if (s[7] != "")
@@ -247,7 +241,6 @@ namespace WindowsFormsApp1
             {
                 bookingS = ElementsSettings.SetDataFromLivingOrBookingDGVToTextBoxes(dataGridView3, e);
                 idOfChosenRow3 = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(conn, Convert.ToInt32(bookingS[0]), Convert.ToInt32(bookingS[1])));
-                textBox21.Text = bookingS[0] + "  " + bookingS[1] + "  " + bookingS[2] + "  " + bookingS[3] + "  " + bookingS[4] + " " + bookingS[5] + " " + bookingS[6] + " " + bookingS[7] + " " + bookingS[8];
                 textBox17.Text = bookingS[5];
                 textBox16.Text = bookingS[6];
                 if (bookingS[7] != "")
@@ -262,7 +255,6 @@ namespace WindowsFormsApp1
             try
             {
                 bookingS = ElementsSettings.SetDataFromApartmentsDGVToTextBoxes(dataGridView4, e);
-                textBox7.Text = bookingS[0] + "  " + bookingS[1] + "  " + bookingS[2];
                 numberOfChosenRow = Convert.ToInt32(bookingS[0]);
                 numberTextBox.Text = bookingS[0];
                 typeComboBox.Text = bookingS[1];

@@ -29,7 +29,6 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.addCustomerButton = new System.Windows.Forms.Button();
@@ -63,7 +62,6 @@ namespace WindowsFormsApp1
             this.label10 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -77,7 +75,6 @@ namespace WindowsFormsApp1
             this.label14 = new System.Windows.Forms.Label();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -95,7 +92,6 @@ namespace WindowsFormsApp1
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.newNumber = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -110,20 +106,12 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 6);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(722, 24);
-            this.textBox1.TabIndex = 0;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 36);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(722, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(722, 378);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -181,7 +169,6 @@ namespace WindowsFormsApp1
             this.tabPage1.Controls.Add(this.textBox3);
             this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.addCustomerButton);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -376,7 +363,6 @@ namespace WindowsFormsApp1
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.textBox11);
             this.tabPage2.Controls.Add(this.textBox12);
-            this.tabPage2.Controls.Add(this.textBox9);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -461,14 +447,6 @@ namespace WindowsFormsApp1
             this.textBox12.TabIndex = 22;
             this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
             // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(6, 6);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(722, 24);
-            this.textBox9.TabIndex = 4;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(734, 6);
@@ -482,9 +460,9 @@ namespace WindowsFormsApp1
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 36);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 6);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(722, 348);
+            this.dataGridView2.Size = new System.Drawing.Size(722, 378);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
@@ -500,7 +478,6 @@ namespace WindowsFormsApp1
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Controls.Add(this.textBox16);
             this.tabPage3.Controls.Add(this.textBox17);
-            this.tabPage3.Controls.Add(this.textBox21);
             this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -600,14 +577,6 @@ namespace WindowsFormsApp1
             this.textBox17.Size = new System.Drawing.Size(169, 20);
             this.textBox17.TabIndex = 40;
             // 
-            // textBox21
-            // 
-            this.textBox21.Location = new System.Drawing.Point(6, 6);
-            this.textBox21.Multiline = true;
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(722, 24);
-            this.textBox21.TabIndex = 36;
-            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(734, 6);
@@ -621,9 +590,9 @@ namespace WindowsFormsApp1
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 37);
+            this.dataGridView3.Location = new System.Drawing.Point(6, 6);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(722, 347);
+            this.dataGridView3.Size = new System.Drawing.Size(722, 378);
             this.dataGridView3.TabIndex = 34;
             this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
@@ -643,7 +612,6 @@ namespace WindowsFormsApp1
             this.tabPage4.Controls.Add(this.label16);
             this.tabPage4.Controls.Add(this.label15);
             this.tabPage4.Controls.Add(this.label13);
-            this.tabPage4.Controls.Add(this.textBox7);
             this.tabPage4.Controls.Add(this.newNumber);
             this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.dataGridView4);
@@ -778,14 +746,6 @@ namespace WindowsFormsApp1
             this.label13.TabIndex = 38;
             this.label13.Text = "Числовое обозначение";
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(6, 6);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(722, 24);
-            this.textBox7.TabIndex = 37;
-            // 
             // newNumber
             // 
             this.newNumber.Location = new System.Drawing.Point(734, 390);
@@ -809,9 +769,9 @@ namespace WindowsFormsApp1
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(6, 35);
+            this.dataGridView4.Location = new System.Drawing.Point(6, 6);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(722, 349);
+            this.dataGridView4.Size = new System.Drawing.Size(722, 378);
             this.dataGridView4.TabIndex = 2;
             this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
             // 
@@ -845,8 +805,6 @@ namespace WindowsFormsApp1
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button addCustomerButton;
@@ -876,7 +834,6 @@ namespace WindowsFormsApp1
         public System.Windows.Forms.Button moveToBookingsBotton;
         public System.Windows.Forms.Button changeCustomerDataButton;
         public System.Windows.Forms.Button deleteCustomerButton;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox11;
@@ -891,7 +848,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox21;
         public System.Windows.Forms.Button button9;
         public System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -900,7 +856,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.TextBox numberTextBox;
         private System.Windows.Forms.Label label16;

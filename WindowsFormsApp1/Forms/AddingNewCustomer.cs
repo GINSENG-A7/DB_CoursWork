@@ -43,45 +43,48 @@ namespace WindowsFormsApp1
                 textBox14.Text = Form1.bookingS[6];
                 dataGridViewANC.DataSource = RequestsSQLT.SelectAllFromApartmentsWhereNumberIsSet(Form1.conn, Convert.ToInt32(Form1.bookingS[4]));
             }
+            ElementsSettings.RenameApartmentsDGV(dataGridViewANC);
+            CheckAndAddCustomerData.Enabled = false;
+            CheckAndAddВookingData.Enabled = false;
         }
 
         public void CheckAndAddCustomerData_Click(object sender, EventArgs e) //Регистрация проживания
         {
-            SqlCommand command1 = new SqlCommand();
-            SqlCommand command2 = new SqlCommand();
-            SqlCommand command3 = new SqlCommand();
-            int idOfNewAdditionalService = -1;
-            Form1.OpenConnectionCorrect(Form1.conn);
-            int idOfCurrentCustomer = 0;
-            if (ElementsSettings.RowOfPassportSeriesConsistEnoughNumbers(textBox1) == true && ElementsSettings.RowOfPassportNumberConsistEnoughNumbers(textBox2) == true && ElementsSettings.ValuesOfGuestsAndKidsAreCorrect(textBox13, textBox14) == true && ElementsSettings.SettlingDateIsLessThenEvictionDate(ancSettlingDateTimePicker, ancEvictionDateTimePicker) == true) //Проверяем все ограничения ввода
+            if(textBox13.Text != "" && textBox14.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "")
             {
-                //SqlCommand command = new SqlCommand("INSERT INTO Customer (passport_series, passport_number, name, surname, patronymic, birthday, tel_number) values('"+textBox1.Text+"', '"+textBox2.Text+"', '"+textBox3.Text+"', '"+textBox4.Text+"', '"+textBox5.Text+"', '"+textBox6.Text+"', '"+textBox7.Text+"')", Form1.conn);
-                if (RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(Form1.conn, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)) != "null") //Если клиент уже был постояльцем, то реистрируем проживание по его ID
+                SqlCommand command1 = new SqlCommand();
+                SqlCommand command2 = new SqlCommand();
+                SqlCommand command3 = new SqlCommand();
+                int idOfNewAdditionalService = -1;
+                Form1.OpenConnectionCorrect(Form1.conn);
+                int idOfCurrentCustomer = 0;
+                if (ElementsSettings.RowOfPassportSeriesConsistEnoughNumbers(textBox1) == true && ElementsSettings.RowOfPassportNumberConsistEnoughNumbers(textBox2) == true && ElementsSettings.ValuesOfGuestsAndKidsAreCorrect(textBox13, textBox14) == true && ElementsSettings.SettlingDateIsLessThenEvictionDate(ancSettlingDateTimePicker, ancEvictionDateTimePicker) == true) //Проверяем все ограничения ввода
                 {
-                    idOfCurrentCustomer = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(Form1.conn, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)));
-                    if(RequestsSQLT.ValueOfCustomerLivingsAndBookingsForToday(Form1.conn, idOfCurrentCustomer) < 5)
+                    //SqlCommand command = new SqlCommand("INSERT INTO Customer (passport_series, passport_number, name, surname, patronymic, birthday, tel_number) values('"+textBox1.Text+"', '"+textBox2.Text+"', '"+textBox3.Text+"', '"+textBox4.Text+"', '"+textBox5.Text+"', '"+textBox6.Text+"', '"+textBox7.Text+"')", Form1.conn);
+                    if (RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(Form1.conn, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)) != "null") //Если клиент уже был постояльцем, то реистрируем проживание по его ID
                     {
-                        command3 = new SqlCommand("INSERT INTO Additional_services (mini_bar, clothes_washing, telephone, intercity_telephone, food) VALUES (0, 0, 0, 0, 0)", Form1.conn);
-                        command3.ExecuteNonQuery();
-                        command3 = new SqlCommand("select @@IDENTITY", Form1.conn);
-                        idOfNewAdditionalService = Convert.ToInt32(command3.ExecuteScalar());
+                        idOfCurrentCustomer = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(Form1.conn, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)));
+                        if (RequestsSQLT.ValueOfCustomerLivingsAndBookingsForToday(Form1.conn, idOfCurrentCustomer) < 5)
+                        {
+                            command3 = new SqlCommand("INSERT INTO Additional_services (mini_bar, clothes_washing, telephone, intercity_telephone, food) VALUES (0, 0, 0, 0, 0)", Form1.conn);
+                            command3.ExecuteNonQuery();
+                            command3 = new SqlCommand("select @@IDENTITY", Form1.conn);
+                            idOfNewAdditionalService = Convert.ToInt32(command3.ExecuteScalar());
 
-                        command2 = new SqlCommand("INSERT INTO Living (number, settling, eviction, value_of_guests, value_of_kids, customer_id, as_id) VALUES (@number, @settling, @eviction, @value_of_guests, @value_of_kids, @customer_id, @as_id)", Form1.conn);
-                        command2.Parameters.AddWithValue("@number", selectedNumberOfApartments);
-                        command2.Parameters.AddWithValue("@settling", ancSettlingDateTimePicker.Value);
-                        command2.Parameters.AddWithValue("@eviction", ancEvictionDateTimePicker.Value);
-                        command2.Parameters.AddWithValue("@value_of_guests", textBox13.Text);
-                        command2.Parameters.AddWithValue("@value_of_kids", textBox14.Text);
-                        command2.Parameters.AddWithValue("@customer_id", idOfCurrentCustomer);
-                        command2.Parameters.AddWithValue("@as_id", idOfNewAdditionalService);
-                        command2.ExecuteNonQuery();
-                        //Тут можно потом поставить MessageBox, предупреждающий о том, что ткоей клинет уже есть в базе данных
-                        //Tyт потом дописать каскадное создание записи в Additional_services!!!!
+                            command2 = new SqlCommand("INSERT INTO Living (number, settling, eviction, value_of_guests, value_of_kids, customer_id, as_id) VALUES (@number, @settling, @eviction, @value_of_guests, @value_of_kids, @customer_id, @as_id)", Form1.conn);
+                            command2.Parameters.AddWithValue("@number", selectedNumberOfApartments);
+                            command2.Parameters.AddWithValue("@settling", ancSettlingDateTimePicker.Value);
+                            command2.Parameters.AddWithValue("@eviction", ancEvictionDateTimePicker.Value);
+                            command2.Parameters.AddWithValue("@value_of_guests", textBox13.Text);
+                            command2.Parameters.AddWithValue("@value_of_kids", textBox14.Text);
+                            command2.Parameters.AddWithValue("@customer_id", idOfCurrentCustomer);
+                            command2.Parameters.AddWithValue("@as_id", idOfNewAdditionalService);
+                            command2.ExecuteNonQuery();
+                            //Тут можно потом поставить MessageBox, предупреждающий о том, что ткоей клинет уже есть в базе данных
+                            //Tyт потом дописать каскадное создание записи в Additional_services!!!!
+                        }
                     }
-                }
-                else //Если клиент ещё не был постояльцем в отеле, то добавляем его запись в таблицу клиентов и сразу регистрируем новое проживание
-                {
-                    if (RequestsSQLT.ComapreCustomerFIOforOneID(Form1.conn, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text), textBox3.Text, textBox4.Text, textBox5.Text) == true)
+                    else //Если клиент ещё не был постояльцем в отеле, то добавляем его запись в таблицу клиентов и сразу регистрируем новое проживание
                     {
                         command1 = new SqlCommand("INSERT INTO Customer (passport_series, passport_number, name, surname, patronymic, birthday, tel_number) VALUES (@passport_series, @passport_number, @name, @surname, @patronymic, @birthday, @tel_number)", Form1.conn);
                         command1.Parameters.AddWithValue("@passport_series", textBox1.Text);
@@ -105,42 +108,42 @@ namespace WindowsFormsApp1
                         command2.Parameters.AddWithValue("@customer_id", idOfCurrentCustomer);
                         command2.ExecuteNonQuery();
                     }
-                    else
-                    {
-                        MessageBox.Show("Клиент с такими серией и номером паспорта уже зарегистрирован.");
-                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Поля \"Имя\", \"Фамилия\", \"Отчество\", \"Количество гостей\", \"Количество детей\" обязательны к заполению");
             }
         }
 
-        private void CheckAndAddВookingData_Click(object sender, EventArgs e) //Регистрация бронирования
+        public void CheckAndAddВookingData_Click(object sender, EventArgs e) //Регистрация бронирования
         {
-            SqlCommand command1 = new SqlCommand();
-            SqlCommand command2 = new SqlCommand();
-            Form1.OpenConnectionCorrect(Form1.conn);
-            int idOfCurrentCustomer = 0;
-            if (ElementsSettings.RowOfPassportSeriesConsistEnoughNumbers(textBox1) == true && ElementsSettings.RowOfPassportNumberConsistEnoughNumbers(textBox2) == true && ElementsSettings.ValuesOfGuestsAndKidsAreCorrect(textBox13, textBox14) == true && ElementsSettings.SettlingDateIsLessThenEvictionDate(ancSettlingDateTimePicker, ancEvictionDateTimePicker) == true) //Проверяем все ограничения ввода
-            {            
-                //SqlCommand command = new SqlCommand("INSERT INTO Customer (passport_series, passport_number, name, surname, patronymic, birthday, tel_number) values('"+textBox1.Text+"', '"+textBox2.Text+"', '"+textBox3.Text+"', '"+textBox4.Text+"', '"+textBox5.Text+"', '"+textBox6.Text+"', '"+textBox7.Text+"')", Form1.conn);
-                if (RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(Form1.conn, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)) != "null") //Если клиент уже был постояльцем, то реистрируем проживание по его ID
+            if (textBox13.Text != "" && textBox14.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "")
+            {
+                SqlCommand command1 = new SqlCommand();
+                SqlCommand command2 = new SqlCommand();
+                Form1.OpenConnectionCorrect(Form1.conn);
+                int idOfCurrentCustomer = 0;
+                if (ElementsSettings.RowOfPassportSeriesConsistEnoughNumbers(textBox1) == true && ElementsSettings.RowOfPassportNumberConsistEnoughNumbers(textBox2) == true && ElementsSettings.ValuesOfGuestsAndKidsAreCorrect(textBox13, textBox14) == true && ElementsSettings.SettlingDateIsLessThenEvictionDate(ancSettlingDateTimePicker, ancEvictionDateTimePicker) == true) //Проверяем все ограничения ввода
                 {
-                    idOfCurrentCustomer = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(Form1.conn, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)));
-                    if (RequestsSQLT.ValueOfCustomerLivingsAndBookingsForToday(Form1.conn, idOfCurrentCustomer) < 5)
+                    //SqlCommand command = new SqlCommand("INSERT INTO Customer (passport_series, passport_number, name, surname, patronymic, birthday, tel_number) values('"+textBox1.Text+"', '"+textBox2.Text+"', '"+textBox3.Text+"', '"+textBox4.Text+"', '"+textBox5.Text+"', '"+textBox6.Text+"', '"+textBox7.Text+"')", Form1.conn);
+                    if (RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(Form1.conn, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)) != "null") //Если клиент уже был постояльцем, то реистрируем проживание по его ID
                     {
-                        command2 = new SqlCommand("INSERT INTO Booking (number, settling, eviction, value_of_guests, value_of_kids, customer_id) VALUES (@number, @settling, @eviction, @value_of_guests, @value_of_kids, @customer_id)", Form1.conn);
-                        command2.Parameters.AddWithValue("@number", selectedNumberOfApartments);
-                        command2.Parameters.AddWithValue("@settling", ancSettlingDateTimePicker.Value);
-                        command2.Parameters.AddWithValue("@eviction", ancEvictionDateTimePicker.Value);
-                        command2.Parameters.AddWithValue("@value_of_guests", textBox13.Text);
-                        command2.Parameters.AddWithValue("@value_of_kids", textBox14.Text);
-                        command2.Parameters.AddWithValue("@customer_id", idOfCurrentCustomer);
-                        command2.ExecuteNonQuery();
-                        //Тут можно потом поставить MessageBox, предупреждающий о том, что ткоей клинет уже есть в базе данных
+                        idOfCurrentCustomer = Convert.ToInt32(RequestsSQLT.SelectNthIdFromCustomerWherePassportDataDefinedToString(Form1.conn, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)));
+                        if (RequestsSQLT.ValueOfCustomerLivingsAndBookingsForToday(Form1.conn, idOfCurrentCustomer) < 5)
+                        {
+                            command2 = new SqlCommand("INSERT INTO Booking (number, settling, eviction, value_of_guests, value_of_kids, customer_id) VALUES (@number, @settling, @eviction, @value_of_guests, @value_of_kids, @customer_id)", Form1.conn);
+                            command2.Parameters.AddWithValue("@number", selectedNumberOfApartments);
+                            command2.Parameters.AddWithValue("@settling", ancSettlingDateTimePicker.Value);
+                            command2.Parameters.AddWithValue("@eviction", ancEvictionDateTimePicker.Value);
+                            command2.Parameters.AddWithValue("@value_of_guests", textBox13.Text);
+                            command2.Parameters.AddWithValue("@value_of_kids", textBox14.Text);
+                            command2.Parameters.AddWithValue("@customer_id", idOfCurrentCustomer);
+                            command2.ExecuteNonQuery();
+                            //Тут можно потом поставить MessageBox, предупреждающий о том, что ткоей клинет уже есть в базе данных
+                        }
                     }
-                }
-                else //Если клиент ещё не был постояльцем в отеле, то добавляем его запись в таблицу клиентов и сразу регистрируем новое проживание
-                {
-                    if (RequestsSQLT.ComapreCustomerFIOforOneID(Form1.conn, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text), textBox3.Text, textBox4.Text, textBox5.Text) == true)
+                    else //Если клиент ещё не был постояльцем в отеле, то добавляем его запись в таблицу клиентов и сразу регистрируем новое проживание
                     {
                         command1 = new SqlCommand("INSERT INTO Customer (passport_series, passport_number, name, surname, patronymic, birthday, tel_number) VALUES (@passport_series, @passport_number, @name, @surname, @patronymic, @birthday, @tel_number)", Form1.conn);
                         command1.Parameters.AddWithValue("@passport_series", textBox1.Text);
@@ -164,11 +167,11 @@ namespace WindowsFormsApp1
                         command2.Parameters.AddWithValue("@customer_id", idOfCurrentCustomer);
                         command2.ExecuteNonQuery();
                     }
-                    else
-                    {
-                        MessageBox.Show("Клиент с такими серией и номером паспорта уже зарегистрирован.");
-                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Поля \"Имя\", \"Фамилия\", \"Отчество\", \"Количество гостей\", \"Количество детей\" обязательны к заполению");
             }
         }
 
@@ -234,6 +237,8 @@ namespace WindowsFormsApp1
 
         private void dataGridViewANC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            CheckAndAddCustomerData.Enabled = true;
+            CheckAndAddВookingData.Enabled = true;
             selectedNumberOfApartments = ElementsSettings.SelectNumberOfSelectedApartments(dataGridViewANC, e);
             if (textBox13.Text != "" && textBox14.Text != "" && ancSettlingDateTimePicker.Value < ancEvictionDateTimePicker.Value)
             {
