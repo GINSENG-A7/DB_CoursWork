@@ -19,7 +19,14 @@ namespace WindowsFormsApp1
         public ViewingApartmentsPhotos()
         {
             InitializeComponent();
-            pictureBox1.Load(RequestsSQLT.photosList[intdexOfPicture].path);
+            try 
+            {
+                pictureBox1.Load(RequestsSQLT.photosList[intdexOfPicture].path);
+            } 
+            catch 
+            {
+                deleteImageButton.Enabled = false;
+            }
         }
 
         private void addImageButton_Click(object sender, EventArgs e)
@@ -36,6 +43,7 @@ namespace WindowsFormsApp1
                     command.Parameters.AddWithValue("@path", ofd.FileName);
                     command.Parameters.AddWithValue("@number", Form1.numberOfChosenRow);
                     command.ExecuteNonQuery();
+                    deleteImageButton.Enabled = true;
                 }
                 catch
                 {

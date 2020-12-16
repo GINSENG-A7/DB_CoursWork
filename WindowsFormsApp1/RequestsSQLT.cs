@@ -185,6 +185,19 @@ namespace WindowsFormsApp1
             reader.Close();
             return dt;
         }
+        public static bool ApartmentConsistsSomePhotos(SqlConnection connection, int nOA)
+        {
+            SqlCommand command = new SqlCommand($"SELECT number, type, price FROM Apartments WHERE number = {nOA}", connection);
+            command.CommandType = CommandType.Text;
+            if (command.ExecuteScalar() == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public static bool NumberOfApartmentsIsFree(SqlConnection connection, int nOA)
         {
             SqlCommand command = new SqlCommand($"SELECT a.number FROM Apartments a WHERE a.number = {nOA} AND(a.number IN(SELECT number FROM Living WHERE eviction > '{DateTime.Today}') AND NOT EXISTS(SELECT number FROM Booking WHERE a.number IN(SELECT number FROM Booking))) OR(a.number IN(SELECT number FROM Booking WHERE settling < '{DateTime.Today}') AND NOT EXISTS(SELECT number FROM Living WHERE a.number IN(SELECT number FROM Living)) OR((a.number in (SELECT number FROM Living WHERE eviction > '{DateTime.Today}')) AND(a.number in (SELECT number FROM Booking WHERE settling < '{DateTime.Today}'))))", connection);
@@ -208,7 +221,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Введён уже существущий номер");
                 return false;
             }
         }
