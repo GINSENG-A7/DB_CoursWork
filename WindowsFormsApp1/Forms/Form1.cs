@@ -523,10 +523,20 @@ namespace WindowsFormsApp1
             {
                 if (RequestsSQLT.NumberOfApartmentsIsFree(conn, numberOfChosenRow) == true) //Проверяем все ограничения ввода для таблицы клиентов
                 {
-                    SqlCommand command = new SqlCommand();
-                    command = new SqlCommand($"UPDATE Apartments SET number = {Convert.ToInt32(numberTextBox.Text)}, \"type\" = '{typeComboBox.Text}', price = {Convert.ToInt32(priceTextBox.Text)} WHERE number = {Convert.ToInt32(numberTextBox.Text)}", conn);
-                    command.ExecuteNonQuery();
-                    Refresh4();
+                    if(RequestsSQLT.SelectSetValueOfNumberFromApartments(numberTextBox, conn) == true)
+                    {
+                        if(RequestsSQLT.TypeOfApartmentsIsCorrect(typeComboBox, conn) == true)
+                        {
+                            SqlCommand command = new SqlCommand();
+                            command = new SqlCommand($"UPDATE Apartments SET number = {Convert.ToInt32(numberTextBox.Text)}, \"type\" = '{typeComboBox.Text}', price = {Convert.ToInt32(priceTextBox.Text)} WHERE number = {Convert.ToInt32(numberTextBox.Text)}", conn);
+                            command.ExecuteNonQuery();
+                            Refresh4();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Введён некорректный тип номера");
+                        }
+                    }
                 }
                 else
                 {

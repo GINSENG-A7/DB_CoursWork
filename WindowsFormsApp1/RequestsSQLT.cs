@@ -85,6 +85,17 @@ namespace WindowsFormsApp1
                 return true;
             }
         }
+        public static bool TypeOfApartmentsIsCorrect(ComboBox cb, SqlConnection connection)
+        {
+            for(int i = 0; i < Form1.admissibleTypesOfApartments.Length; i++)
+            {
+                if(Form1.admissibleTypesOfApartments[i] == cb.Text)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public static DataTable SelectAllFromCustomer(SqlConnection connection)
         {
             DataTable dt = new DataTable();
@@ -204,11 +215,11 @@ namespace WindowsFormsApp1
             command.CommandType = CommandType.Text;
             if (command.ExecuteScalar() == null)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
         public static bool IsNotThereSetNumberInApartments(SqlConnection connection, int nOA)
