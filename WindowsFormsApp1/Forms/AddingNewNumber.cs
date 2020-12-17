@@ -46,24 +46,31 @@ namespace WindowsFormsApp1
             {
                 if(textBox1.Text != "" && comboBox1.Text != "" && textBox3.Text != "")
                 {
-                    //SqlCommand command0 = new SqlCommand();
-                    //command0 = new SqlCommand($"SET IDENTITY_INSERT Apartments ON", Form1.conn);
-                    //command0.ExecuteNonQuery();
-                    SqlCommand command1 = new SqlCommand();
-                    command1 = new SqlCommand($"INSERT INTO Apartments (number, \"type\", price) VALUES (@number, @type, @price)", Form1.conn);
-                    command1.Parameters.AddWithValue("@number", Convert.ToInt32(textBox1.Text));
-                    command1.Parameters.AddWithValue("@type", comboBox1.Text);
-                    command1.Parameters.AddWithValue("@price", Convert.ToInt32(textBox3.Text));
-                    command1.ExecuteNonQuery();
-                    //command0 = new SqlCommand($"SET IDENTITY_INSERT Apartments OFF", Form1.conn);
-                    //command0.ExecuteNonQuery();
-                    foreach (string i in selectedPhotos)
+                    if (RequestsSQLT.TypeOfApartmentsIsCorrect(comboBox1, Form1.conn) == true)
                     {
-                        SqlCommand command2 = new SqlCommand();
-                        command2 = new SqlCommand($"INSERT INTO Photos (path, number) VALUES (@path, @number)", Form1.conn);
-                        command2.Parameters.AddWithValue("@path", i);
-                        command2.Parameters.AddWithValue("@number", Convert.ToInt32(textBox1.Text));
-                        command2.ExecuteNonQuery();
+                        //SqlCommand command0 = new SqlCommand();
+                        //command0 = new SqlCommand($"SET IDENTITY_INSERT Apartments ON", Form1.conn);
+                        //command0.ExecuteNonQuery();
+                        SqlCommand command1 = new SqlCommand();
+                        command1 = new SqlCommand($"INSERT INTO Apartments (number, \"type\", price) VALUES (@number, @type, @price)", Form1.conn);
+                        command1.Parameters.AddWithValue("@number", Convert.ToInt32(textBox1.Text));
+                        command1.Parameters.AddWithValue("@type", comboBox1.Text);
+                        command1.Parameters.AddWithValue("@price", Convert.ToInt32(textBox3.Text));
+                        command1.ExecuteNonQuery();
+                        //command0 = new SqlCommand($"SET IDENTITY_INSERT Apartments OFF", Form1.conn);
+                        //command0.ExecuteNonQuery();
+                        foreach (string i in selectedPhotos)
+                        {
+                            SqlCommand command2 = new SqlCommand();
+                            command2 = new SqlCommand($"INSERT INTO Photos (path, number) VALUES (@path, @number)", Form1.conn);
+                            command2.Parameters.AddWithValue("@path", i);
+                            command2.Parameters.AddWithValue("@number", Convert.ToInt32(textBox1.Text));
+                            command2.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Введён некорректный тип номера");
                     }
                 }
                 else
